@@ -1,4 +1,4 @@
-</main>
+
 <footer>
     <div class="container">
       <div class="connect">
@@ -12,15 +12,22 @@
 
       <div class="misc">
         <div class="miscOne">
-          <h6>menu</h6>
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum</p>
-        </div>
-        <div class="miscTwo">
-          <h6>menu</h6>
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum</p>
-        </div>
+        <h6>menu</h6>
+        <?php
+          wp_nav_menu( array(
+              'menu' => 'footerMenu',
+              'menu_class' => 'footerMenuUl',
+          ));
+          ?>
+      </div>
+      <div class="miscOne">
+        <h6>menu</h6>
+        <?php
+          wp_nav_menu( array(
+              'menu' => 'footerMenu',
+              'menu_class' => 'footerMenuUl',
+          ));
+          ?>
       </div>
     </div>
   </footer>

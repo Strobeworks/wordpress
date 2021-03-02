@@ -1,0 +1,1994 @@
+/*
+Theme Name: VedwayLife
+Theme URI: https://vedwaylife.com
+Author: Strobeworks
+Author URI: https://strobeworks.in
+Description: custom theme for vedway.
+Version: 1
+Requires PHP: 5.2.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: vedway
+Text Domain: vedway
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+:root {
+    --primery: #79C9A5;
+    --secondary: #FFA190;
+    --accent: #AF5C2C;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #535353;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat';
+    margin: 1rem 0;
+}
+
+p {
+    margin: 0.2rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: var(--secondary);
+    padding: 2rem 4rem;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    max-width: 500px;
+    padding-right: 1em;
+}
+
+header nav {
+    display: none;
+    font-size: 26px;
+    margin: 0 1rem;
+    max-width: 600px;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav a {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+header nav li {
+    position: relative;
+    margin: 0 1rem;
+}
+
+header nav li::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    opacity: 0;
+    height: 100%;
+    left: -8px;
+    display: block;
+    background-color: #AF5C2C;
+    transition: opacity 500ms;
+}
+
+header nav li:hover::before {
+    opacity: 1;
+}
+
+
+header .misc {
+    max-width: 500px;
+    display: inherit;
+}
+
+header .misc a {
+    margin: 0 0.5em;
+}
+
+
+.sideMenu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -110%;
+    background-color: #f2f2f2;
+    z-index: 5;
+    padding: 10%;
+    transition: right 500ms ease-in-out;
+}
+
+.sideMenu .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.sideMenu.active {
+    right: 0;
+    transition: right 500ms ease-in-out;
+}
+
+.sideMenu a {
+    color: #AF5C2C;
+}
+
+.sideMenu li {
+    position: relative;
+}
+
+.sideMenu nav li {
+    font-size: 20px;
+    margin: 5%;
+}
+
+#menuIco {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+}
+
+.sideMenu nav li::before {
+    content: '';
+    background-color: #AF5C2C;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    left: -1rem;
+    transition: opacity 500ms;
+}
+
+.sideMenu nav li:hover::before {
+    opacity: 1;
+}
+
+/*media for header icon */
+@media screen and (max-width:580px) {
+
+    header #shop,
+    header #account {
+        display: none;
+    }
+}
+
+/*header nav menubtn*/
+header #menu {
+    display: none;
+}
+
+@media (max-width:1099px) {
+    header #menu {
+        display: block
+    }
+}
+
+@media (min-width:1100px) {
+    header nav {
+        display: block;
+    }
+}
+
+
+
+/*Hero Section*/
+.heroSection {
+    background: linear-gradient(90deg, #F7E4D0 50%, #79C9A5 50%);
+    padding: 0 4rem;
+}
+
+.heroSection .container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.heroSection .slider,
+.heroSection .heroContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 0;
+}
+
+.heroContent {
+    justify-content: flex-end;
+}
+
+.heroSection .slider {
+    flex: 1 1 40%;
+    justify-content: flex-start;
+    background-color: #F7E4D0;
+    color: var(--accent);
+    position: relative;
+}
+
+.heroSection .slider h2 {
+    font-size: 68px;
+    line-height: 90px;
+    font-weight: 800;
+
+}
+
+.heroSection .slider p {
+    font-size: 18px;
+    margin: 13px 0;
+}
+
+.heroSection .slider .imgSlider {
+    max-width: 70%;
+    max-height: 620px;
+    position: absolute;
+    right: -35%;
+    bottom: 5%;
+}
+
+.heroSection .slider img {
+    width: 100%;
+}
+
+.heroSection .sliderNav {
+    display: flex;
+    justify-content: center;
+}
+
+.heroSection .sliderNav i {
+    margin: 1rem 1rem;
+}
+
+.heroContent {
+    flex: 1 1 60%;
+    background-color: var(--primery);
+}
+
+.heroContent .inner {
+    margin-left: 10rem;
+    max-width: 540px;
+}
+
+.heroContent h1 {
+    font-size: 62px;
+    margin-top: 0;
+    color: #fff;
+}
+
+.heroContent p {
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+
+/* convenience section */
+.convenience {
+    padding: 10rem 4rem;
+}
+
+.convenience .container {
+    height: auto;
+    display: flex;
+    position: relative;
+}
+
+.convenience img {
+    position: absolute;
+    width: 50px;
+}
+
+.convenience .box {
+    color: #fff;
+}
+
+.convenience .left,
+.convenience .right {
+    display: flex;
+    max-width: 800px;
+    height: 100%;
+
+}
+
+.convenience .left {
+    flex: 1 1 50%;
+    padding-right: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.carry,
+.make,
+.consumption {
+    position: relative;
+}
+
+.carry {
+    margin-top: 20rem;
+}
+
+.make {
+    margin-top: 8rem;
+}
+
+.consumption {
+    margin-top: 10rem;
+}
+
+.carry img {
+    bottom: -2rem;
+    right: 0;
+    width: 25rem;
+    z-index: -1;
+}
+
+.left .box::before {
+    height: 180%;
+}
+
+.left .box {
+    background-color: rgba(175, 92, 44, 0.91);
+    height: auto;
+    padding-right: 8rem;
+}
+
+.left h2 {
+    font-size: 58px;
+}
+
+.left h3 {
+    font-size: 40px;
+}
+
+.left p,
+.right p {
+    margin: 1rem 0px;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.convenience .right {
+    flex: 1 1 50%;
+    padding-left: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right .make h3 {
+    font-size: 32px;
+}
+
+.right .make p {
+    font-size: 22px;
+    margin-top: 23px;
+}
+
+.right .box::before {
+    height: 120%;
+}
+
+.make img {
+    bottom: -2rem;
+    right: 0;
+    width: 14rem;
+    z-index: 2;
+    transform: scaleX(-1);
+}
+
+.make .box {
+    margin: auto 13rem auto auto;
+}
+
+.consumption img {
+    bottom: -2rem;
+    left: 0;
+    width: 12rem;
+    z-index: 2;
+    transform: scaleX(-1);
+}
+
+.consumption .box {
+    margin: auto auto auto 11rem;
+}
+
+.consumption .box::before {
+    height: 120%;
+}
+
+.right .consumption h3 {
+    font-size: 30px;
+}
+
+.right .consumption p {
+    font-size: 22px;
+    margin-top: 19px;
+    line-height: 30px;
+    padding-right: 6rem;
+}
+
+/* Balancing section */
+.balancing {
+    background-color: var(--primery);
+    margin: 45px 0px;
+    padding: 0 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.balancing h2 {
+    font-size: 101px;
+    font-weight: 200;
+}
+
+.balancing strong {
+    font-weight: 800;
+}
+
+.balancing img {
+    margin-top: -4rem;
+    width: 20vw;
+    max-width: 300px;
+}
+
+.balancing .container {
+    max-width: 1900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*atmosphere*/
+.atmosphere {
+    margin: 2rem 0;
+    padding: 0 4rem;
+}
+
+.atmosphere .container {
+    display: flex;
+    align-items: center;
+    padding: 10vh 0;
+}
+
+.atmosphere .illustration,
+.atmosphere .content {
+    flex: 1 1 50%;
+}
+
+.atmosphere .illustration {
+    text-align: center;
+}
+
+.atmosTop {}
+
+.atmosInner {
+    width: 140px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.atmosphere .illustration .atmosInner img {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.atmosphere .illustration .atmosInner img:nth-child(2) {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: atmosTopSpin 8s linear infinite;
+}
+
+@keyframes atmosTopSpin {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.atmosphere .content {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.atmosphere .content h3 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.atmosphere .content h2 {
+    font-size: 58px;
+    font-weight: 800;
+}
+
+.atmosphere .content p {
+    font-size: 24px;
+    line-height: 36px;
+    margin: 28px 0;
+}
+
+/*madeWithLove*/
+.madeWithLove {
+    padding: 4rem;
+    background-color: var(--secondary);
+    margin: 45px 0px;
+    color: #fff;
+}
+
+.madeWithLove .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.madeWithLove .text {
+    flex: 1 1 20%;
+    margin: 2rem 0;
+}
+
+.madeWithLove ul {
+    flex: 1 1 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.madeWithLove .header {
+    font-size: 58px;
+    line-height: 70px;
+}
+
+.madeWithLove .header span::before {
+    background-color: #fff;
+}
+
+.madeWithLove h2 span {
+    color: #fff;
+}
+
+.madeWithLove img {
+    width: 4rem;
+}
+
+.madeWithLove .icon {
+    padding-top: 40px;
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.madeWithLove li {
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.madeWithLove li img {
+    width: 50%;
+}
+
+.madeWithLove li p {
+    text-transform: capitalize;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+
+.madeWithLove li br {
+    display: none;
+}
+
+/*heart*/
+.heart {
+    padding: 0rem 4rem;
+    font-size: 24px;
+}
+
+.heart .container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10vh 0;
+}
+
+.heart .content,
+.heart .slider {
+    flex: 1 1 50%;
+}
+
+.heart .header {
+    font-size: 58px;
+}
+
+.heart h3 {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.heart ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+.heart li {
+    line-height: 40px;
+}
+
+.heart .slider {
+    max-height: 650px;
+}
+
+.heart .sliderInner {
+    width: 90%;
+    height: 90%;
+    margin: 1rem auto;
+
+}
+
+.heart .sliderInner .slides {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.heart .sliderInner .slide {
+    height: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.heart .sliderInner .slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.heart .sliderNav {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 2rem;
+}
+
+.heart .sliderNav a {
+    margin: 1rem 2rem;
+    color: #535353;
+}
+
+
+/*testimonial*/
+.testimonial {
+    margin: 2rem 0;
+    padding: 1rem 4rem;
+    font-size: 24px;
+}
+
+.testimonial .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial .slider {
+    width: 80%;
+    height: 100%;
+}
+
+.testimonial .head {
+    margin: 1rem 2rem 0 0;
+}
+
+.testimonial .sliderInner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.testimonial .slide {
+    width: 50%;
+}
+
+.testimonial .sliderInner {
+    width: 90%;
+    height: 90%;
+    margin: 1rem auto;
+
+}
+
+.testimonial .sliderInner .slides {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    overflow: scroll;
+    scrollbar-width: thin;
+}
+
+.testimonial .sliderInner .slides::-webkit-scrollbar {
+    /*testing*/
+}
+
+.testimonial .sliderInner .slide {
+    height: 100%;
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.testimonial .card {
+    color: #fff;
+    padding: 4rem 4rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+    background-color: var(--primery);
+    position: relative;
+}
+
+.testimonial .card::before {
+    content: '“';
+    font-size: 108px;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+}
+
+.testimonial .details {
+    display: flex;
+    margin: 1rem 1rem;
+
+}
+
+.testimonial .details img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.testimonial .details p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.testimonial .details h4 {
+    position: relative;
+}
+
+.testimonial .details h4::before {
+    content: '....';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer {
+    background-color: var(--accent);
+    color: #fff;
+    padding: 4rem;
+    text-transform: capitalize;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .connect p {
+    margin-left: 0.5rem;
+}
+
+footer .misc {
+    max-width: 500px;
+    display: flex;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+footer .miscOne,
+footer .miscTwo {
+    margin: 0 1rem;
+}
+
+footer .misc h6 {
+    font-size: 38px;
+    font-weight: 400;
+}
+
+footer p {
+    font-size: 24px;
+}
+
+footer h2 {
+    font-size: 70px;
+}
+
+footer a {
+    color: #f2f2f2;
+}
+
+/*Utils*/
+.container {
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexItem-5 {
+    flex: 1 1 50%;
+}
+
+.gridContainer {
+    display: grid;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 315px;
+    padding: 23px 48px 23px 49px;
+    border-radius: 10px;
+    background-color: rgba(247, 228, 208, 0);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    border: 2px solid #FFF9F2;
+    text-transform: capitalize;
+    transition: background-color 500ms ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FFF9F2;
+    color: var(--primery);
+}
+
+.btnAlternate {
+    width: 315px;
+    padding: 23px 48px 23px 49px;
+    border-radius: 10px;
+    background-color: var(--primery);
+    border: 2px solid var(--primery);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: background-color 500ms ease;
+}
+
+.btnAlternate:hover {
+    background-color: #fff;
+    color: var(--primery);
+    border: 2px solid var(--primery);
+}
+
+.btnAlternate.disabled,
+.btn.disabled {
+    background-color: #535353;
+    border: #707070;
+    cursor: not-allowed;
+    color: #fff;
+}
+
+.box {
+    border-radius: 10px;
+    background-color: #AF5C2C;
+    padding: 2% 4%;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 106%;
+    height: 120%;
+    bottom: -10%;
+    left: -3%;
+    border-radius: 10px;
+    background-color: rgba(247, 228, 208, 0.91);
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 2rem;
+}
+
+.header span {
+    color: var(--accent);
+}
+
+.header ::before {
+    content: '';
+    height: 100%;
+    width: 15px;
+    position: absolute;
+    left: -2rem;
+    background-color: var(--accent);
+}
+
+/*products page*/
+
+.banner-section {
+    height: 100%;
+    background: linear-gradient(55deg, #79C9A5 50%, #e8bf71 50%);
+}
+
+.banner-section .banner {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+}
+
+.banner-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vedway-products {
+    margin: 0;
+
+}
+
+.vedway-products .vedway-product:nth-child(even) {
+    background-color: #FFA190;
+    color: #fef;
+}
+
+.vedway-products .header {
+    font-size: 48px;
+    line-height: 57px;
+}
+
+.vedway-products .vedway-product .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.vedway-product .productImg img {
+    width: 100%;
+    height: 450px;
+}
+
+.vedway-product .productInfo {
+    padding: 1rem;
+}
+
+.vedway-product .productInfo ul {
+    margin: 2rem 1rem;
+    font-size: 24px;
+    list-style: disc;
+}
+
+.vedway-product .price {
+    font-size: 44px;
+}
+
+.vedway-product .availableType>p,
+.vedway-product .quantity>p {
+    font-size: 24px;
+    margin: 1rem 0rem;
+}
+
+.vedway-product .availableType .typeInput {
+    display: none;
+}
+
+.types a {
+    text-transform: uppercase;
+    color: #333;
+    margin-left: 10px;
+}
+
+.vedway-product .availableType .typeLable {
+    height: 100%;
+    padding: 0px 15px;
+    text-align: center;
+    display: inline-flex;
+    border-radius: 10px;
+    border: 1px solid #707070;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: box-shadow 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.vedway-product .types .typeInput:checked+.typeLable {
+    border: 1px solid var(--primery);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.productForm .availableType,
+.productForm .quantity {
+    padding: 0.5rem 0;
+}
+
+.quantity input[type="number"] {
+    width: 4rem;
+    border-radius: 10px;
+    border: 1px solid var(--primery);
+    padding: 10px;
+}
+
+.quantity input::-webkit-inner-spin-button,
+.quantity input::-webkit-inner-spin-button {
+    /**/
+}
+
+.s1 {
+    background-color: #FFA190;
+}
+
+.s2 {
+    background-color: #FBF2E7;
+}
+
+.s3 {
+    background-color: #FFFBF5;
+}
+
+.productForm .btnAlternate {
+    margin-top: 10px;
+}
+
+.vedway-product-alternate {
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width:1600px) {
+
+    /*Font Reset*/
+    header nav {
+        font-size: 24px;
+    }
+
+    .sideMenu nav li {
+        font-size: 24px;
+    }
+
+    .heroSection .slider h2 {
+        font-size: 4vw;
+        line-height: initial;
+    }
+
+    .heroSection .slider p {
+        font-size: 18px;
+    }
+
+    .heroContent h1 {
+        font-size: 3.8vw;
+    }
+
+    .heroContent p {
+        font-size: 24px;
+        line-height: unset;
+    }
+
+    .left h2 {
+        font-size: 3.8vw;
+    }
+
+    .left h3 {
+        font-size: 3.2vw;
+    }
+
+    .left p,
+    .right p {
+        font-size: 24px;
+        line-height: unset;
+    }
+
+    .right .make h3 {
+        font-size: 2.2vw;
+    }
+
+    .right .make p {
+        font-size: 22px;
+    }
+
+    .right .consumption h3 {
+        font-size: 2vw;
+    }
+
+    .right .consumption p {
+        font-size: 22px;
+    }
+
+    .balancing h2 {
+        font-size: 6vw;
+    }
+
+
+    .atmosphere .content h3 {
+        font-size: 2.5vw;
+    }
+
+    .atmosphere .content h2 {
+        font-size: 3.5vw;
+    }
+
+    .atmosphere .content p {
+        font-size: 24px;
+        line-height: unset;
+    }
+
+    .madeWithLove .header {
+        font-size: 4vw;
+    }
+
+    .madeWithLove li p {
+        font-size: 20px;
+    }
+
+    .heart {
+        font-size: 24px;
+    }
+
+    .heart .header {
+        font-size: 3.8vw;
+    }
+
+    .heart h3 {
+        font-size: 2.4vw;
+    }
+
+    .testimonial {
+        font-size: 24px;
+    }
+
+    .testimonial .card::before {
+        font-size: 108px;
+    }
+
+    .testimonial .details p {
+        font-size: 20px;
+    }
+
+    footer .misc h6 {
+        font-size: 38px;
+    }
+
+    footer p {
+        font-size: 24px;
+    }
+
+    footer h2 {
+        font-size: 4vw;
+    }
+
+    .btn {
+        font-size: 18px;
+    }
+
+    .btnAlternate {
+        font-size: 20px;
+    }
+
+
+
+    .products .header {
+        font-size: 48px;
+    }
+
+    .product .productInfo ul {
+        font-size: 24px;
+    }
+
+    .product .price {
+        font-size: 44px;
+    }
+
+    .product .availableType>p,
+    .product .quantity>p {
+        font-size: 24px;
+    }
+
+    .product .availableType .typeLable {
+        font-size: 18px;
+    }
+
+    /*End Font Reset*/
+    header {
+        padding: 2rem 4%;
+    }
+
+    .heroSection,
+    .atmosphere,
+    .heart,
+    .testimonial {
+        padding: 0 4%;
+    }
+
+    .heroContent .inner {
+        margin-left: 12rem;
+    }
+
+    .convenience {
+        padding: 10% 4%;
+    }
+
+    .carry {
+        margin-top: 25rem;
+    }
+
+    .carry img {
+        width: 380px;
+    }
+
+    .left .box {
+        padding-right: 4%;
+    }
+
+    .make img {
+        width: 200px;
+    }
+
+    .consumption img {
+        bottom: 0;
+        width: 180px;
+    }
+
+    .make .box {
+        margin-right: 9rem;
+    }
+
+    .right .consumption p {
+        padding-right: 0rem;
+    }
+
+    .balancing {
+        padding: 0 2%;
+    }
+
+    .madeWithLove,
+    footer {
+        padding: 4%;
+    }
+
+    .madeWithLove li {
+        margin: 5px;
+    }
+
+    .testimonial .container {
+        flex-wrap: wrap-reverse;
+
+    }
+
+    .testimonial .head {
+        margin: 0;
+    }
+
+    .testimonial .slider {
+        width: 100%;
+    }
+
+    #yogiBR {
+        display: none;
+    }
+
+    .btn {
+        padding: 2vh 3vw;
+    }
+
+    footer a,
+    footer p {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .heroSection .slider {
+        flex: 1 1 45%;
+    }
+
+    .heroSection .heroContent {
+        flex: 1 1 55%;
+    }
+
+    .heroContent .inner {
+        margin-left: 35%;
+    }
+
+    .heroContent p {
+        font-size: 18px;
+    }
+
+    .heroContent .inner p br {
+        display: none;
+    }
+
+    .heroSection .slider .imgSlider {
+        bottom: 7%;
+    }
+
+    .convenience {
+        padding: 8% 4%;
+    }
+
+    .convenience .right {
+        padding-left: 2%
+    }
+
+    .convenience .left {
+        padding-right: 2%
+    }
+
+    .left .carry {
+        margin-top: 80%;
+    }
+
+    .carry img {
+        width: 340px;
+    }
+
+    .left p,
+    .right p {
+        font-size: 20px;
+    }
+
+    .convenience .right .make {
+        margin-top: 15%;
+    }
+
+    .make .box {
+        margin-right: 25%;
+    }
+
+    .make img {
+        z-index: -1;
+    }
+
+    .consumption {
+        margin-top: 15%;
+    }
+
+    .balancing {
+        margin-top: 8%;
+    }
+
+    .atmosphere {
+        margin: 5% 0;
+    }
+
+    .atmosphere .container {
+        padding: 5% 0;
+    }
+
+    .atmosphere .illustration img {
+        margin: 5% 0;
+    }
+
+    .atmosphere .content {
+        padding: 0 2% 0 0;
+    }
+
+    .atmosphere .content p {
+        margin: 2% 0;
+    }
+
+    .madeWithLove .header {
+        line-height: 50px;
+    }
+
+    .madeWithLove .icon {
+        padding-top: 25px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .madeWithLove li p {
+        font-size: 18px;
+    }
+
+    footer a,
+    footer p {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .heroSection {
+        background: linear-gradient(90deg, #F7E4D0 50%, #79C9A5 50%);
+    }
+
+    .heroSection .container {
+        flex-direction: column-reverse;
+    }
+
+    .heroSection .slider,
+    .heroSection .heroContent {
+        padding-left: 2%;
+        flex: 1 1 100%;
+    }
+
+    .btn {
+        padding: 3% 5%;
+        font-size: 18px;
+    }
+
+    .box::before {
+        width: 104%;
+        left: -2%;
+    }
+
+    .heroSection .slider .imgSlider {
+        max-width: 50%;
+        top: -20%;
+        bottom: 0;
+        right: 4%;
+    }
+
+    .heroSection .heroContent {
+        justify-content: flex-start;
+    }
+
+    .heroContent h1 {
+        font-size: 4.8vw;
+    }
+
+    .heroSection .slider h2 {
+        font-size: 6vw;
+    }
+
+    .heroContent p {
+        font-size: 22px;
+        padding-right: 20%;
+    }
+
+    .heroContent .inner {
+        margin: 0;
+    }
+
+    .left .carry {
+        margin-top: 24%;
+    }
+
+    .left .box::before {
+        height: 165%;
+    }
+
+    .carry img {
+        width: 280px;
+        right: 5%;
+    }
+
+    .convenience .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .convenience .left,
+    .convenience .right {
+
+        padding: 0;
+    }
+
+    .left h2 {
+        font-size: 4vw;
+    }
+
+    .convenience .right {
+        flex-direction: column-reverse;
+    }
+
+
+
+    .convenience .right .consumption,
+    .convenience .right .make {
+        margin-top: 15%;
+    }
+
+    .make .box {
+        background-color: rgba(175, 92, 44, 0.94);
+        margin-right: 20%;
+    }
+
+    .consumption .box {
+        margin: auto auto auto 25%;
+        background-color: rgba(175, 92, 44, 0.96);
+    }
+
+    .consumption img {
+        z-index: -1;
+        bottom: -6%;
+        width: 180px;
+    }
+
+    .make img {
+        width: 180px;
+    }
+
+    .right .make h3 {
+        font-size: 4.2vw;
+    }
+
+    .right .consumption h3 {
+        font-size: 4vw;
+    }
+
+    .left h3 {
+        font-size: 4.2vw;
+    }
+
+    .left p,
+    .right p {
+        font-size: 22px;
+    }
+
+    .right .make p {
+
+        margin-top: 0px;
+    }
+
+    .balancing {
+        margin-top: 10%;
+    }
+
+    .balancing img {
+        margin-top: -1rem;
+        width: 18vw;
+    }
+
+    .atmosphere .container {
+        flex-direction: column;
+    }
+
+    .atmosphere .content h2 {
+        font-size: 4.5vw;
+    }
+
+    .atmosphere .content h3 {
+        font-size: 4.5vw;
+        margin: 2% 0;
+    }
+
+    .madeWithLove .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .madeWithLove .header {
+        line-height: 40px;
+    }
+
+    .madeWithLove .text {
+        align-self: flex-start;
+    }
+
+    .madeWithLove ul {
+        flex: 1 1 100%;
+    }
+
+    .madeWithLove li {
+        margin: 5px 1px;
+    }
+
+    .madeWithLove li p br {
+        display: block;
+    }
+
+    footer .container {
+        flex-wrap: wrap;
+    }
+
+    footer .connect,
+    footer .misc {
+        flex: 0 0 100%;
+    }
+
+    footer h2 {
+        font-size: 6vw;
+    }
+
+    footer p {
+        font-size: 22px;
+    }
+
+    footer .miscOne h6,
+    footer .miscTwo h6 {
+        font-weight: 800;
+        font-size: 28px;
+    }
+
+    footer .miscOne,
+    footer .miscTwo {
+        margin: 1%;
+    }
+
+    .vedway-product .productImg img {
+        width: 100%;
+        height: 350px;
+    }
+
+    .vedway-product .productInfo {
+        padding: 0;
+    }
+
+    .vedway-products .header {
+        font-size: 4vw;
+        line-height: initial;
+    }
+
+    .product .productInfo ul {
+        font-size: 20px;
+    }
+
+    .product .price {
+        font-size: 34px;
+    }
+
+    .productForm .availableType,
+    .productForm .quantity {
+        padding: 1% 0;
+    }
+
+    .vedway-product .availableType .typeLable {
+
+        font-size: 18px;
+
+    }
+
+    .product .availableType>p,
+    .product .quantity>p {
+        font-size: 22px;
+    }
+
+    .btnAlternate {
+        width: auto;
+
+    }
+
+    footer a,
+    footer p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .heroSection {
+        padding: 0;
+    }
+
+    .heroContent h1 {
+        font-size: 6vw;
+    }
+
+    .heroSection .slider,
+    .heroSection .heroContent {
+        padding: 10% 5%;
+    }
+
+    .heroSection .slider .imgSlider {
+        text-align: center;
+        position: unset;
+
+    }
+
+    .heroSection .slider img {
+        width: 90%;
+    }
+
+    .convenience {
+        padding: 10% 4%;
+    }
+
+    .carry img {
+        width: 240px;
+    }
+
+    .make img {
+        width: 160px;
+    }
+
+    .consumption img {
+
+        width: 160px;
+    }
+
+    .atmosphere .content p {
+        font-size: 20px;
+    }
+
+    .atmosphere .content h2 {
+        font-size: 5.5vw;
+    }
+
+    .header ::before {
+        width: 10px;
+        left: -1rem;
+    }
+
+    .header {
+        font-size: 5vw;
+        margin-left: 1rem !important;
+    }
+
+    .heart .slider {
+        max-height: unset;
+    }
+
+    .heart .container {
+        padding: 10% 0 20% 0;
+        flex-direction: column-reverse;
+    }
+
+    .madeWithLove .icon {
+        padding-top: 25px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .testimonial .sliderInner .slide {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .vedway-products .vedway-product .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 5%;
+    }
+
+    .vedway-product .productInfo {
+        align-self: flex-start;
+    }
+
+    .vedway-product .productImg img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .blockTwo .variations,
+    .blockTwo .quantity,
+    .blockTwo button {
+        display: none;
+    }
+
+    footer a,
+    footer p {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width:560px) {
+    header .logo {
+        max-width: 200px;
+
+    }
+
+    h1 {
+        font-size: 10vw !important;
+    }
+
+    h2 {
+        font-size: 8vw !important;
+    }
+
+    h3 {
+        font-size: 7vw !important;
+    }
+
+    p {
+        font-size: 16px !important;
+        line-height: unset !important;
+    }
+
+    .balancing {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .balancing .container {
+        overflow: hidden;
+        justify-content: center;
+
+
+    }
+
+    .balancing img {
+        position: absolute;
+    }
+
+    .balancing .container img:nth-child(1) {
+        left: -5%;
+        bottom: 0;
+    }
+
+    .balancing .container img:nth-child(3) {
+        right: -5%;
+        bottom: 0;
+    }
+
+    .madeWithLove ul {
+
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .madeWithLove li {
+        margin: 5%;
+    }
+
+    .madeWithLove .icon {
+        padding-top: 35px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .carry img {
+        width: 180px;
+    }
+
+    .left .carry {
+        margin-top: 30%;
+    }
+
+    .make img {
+        width: 150px;
+    }
+
+    .consumption img {
+        width: 140px;
+    }
+
+    .testimonial .card {
+        padding: 12%;
+        margin: 0;
+    }
+
+    .testimonial .card::before {
+        font-size: 98px;
+        position: absolute;
+        top: -8%;
+        left: 1%;
+    }
+
+    footer .misc {
+        flex-direction: column;
+    }
+
+    .vedway-products .vedway-product .container {
+        flex-direction: column;
+        padding: 10% 5%;
+    }
+
+    .banner-section {
+        height: 50vh;
+    }
+
+    footer a,
+    footer p {
+        font-size: 24px !important;
+    }
+}
+
+@media screen and (max-width:360px) {
+    header {
+        padding: 1rem 4%;
+    }
+
+    header .logo {
+        max-width: 150px;
+    }
+
+    header .misc {
+        width: 45px;
+    }
+
+    h1 {
+        font-size: 9.5vw !important;
+    }
+
+    h2 {
+        font-size: 7.5vw !important;
+    }
+
+    h3 {
+        font-size: 6.5vw !important;
+    }
+
+    h4 {
+        font-size: 6vw !important;
+    }
+
+    h5 {
+        font-size: 5.5vw !important;
+    }
+
+    h6 {
+        font-size: 5vw !important;
+    }
+
+
+    header .logo {
+        max-width: 180px;
+    }
+
+    .carry img {
+        width: 170px;
+    }
+
+    .left .carry {
+        margin-top: 30%;
+    }
+
+    .make img {
+        width: 140px;
+    }
+
+    .consumption img {
+        width: 130px;
+    }
+
+    .convenience .right .consumption,
+    .convenience .right .make {
+        margin-top: 18%;
+    }
+
+    .madeWithLove li p br {
+        display: none;
+    }
+
+    .sideMenu nav li {
+        margin: 10% 0;
+    }
+
+    footer a,
+    footer p {
+        font-size: 18px !important;
+    }
+
+
+}

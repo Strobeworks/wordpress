@@ -9,23 +9,33 @@
   <?php wp_head()?>
   </head>
 
-<body>
-  <aside class="sideMenu">
-    <a href="#" id="asideMenu"><img src='' alt="menu" /></a>
-    <hr />
-    <nav>
-      <ul>
-        <li><a href="">About Us</a></li>
-        <li><a href="/pages/products.html">Shop</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Contact Us</a></li>
-      </ul>
-    </nav>
+<body <?php body_class(); ?>>
+<aside class="sideMenu">
+    <div class="container">
+      <hr />
+      <nav>
+        <ul>
+        <?php 
+            wp_nav_menu( 
+              array(
+                'menu'=>'primery',
+                'container'=>'',
+                'theme_location'=>'primery',
+                'items_wrap'=>'<ul id="headMenu" class=""> %3$s</ul>'
+              )
+
+            );
+          ?>
+        </ul>
+      </nav>
+      <hr>
+      <a href="#" id="menuIco">Close</a>
+    </div>
   </aside>
   <header>
     <div class="container">
       <div class="logo">
-        <img src=<?php echo vedway_dir_imgs()."vadway-logo.svg"?> width="100%" alt="vadway logo" />
+        <a href="/"><img src=<?php echo vedway_dir_imgs()."vadway-logo.svg"?> width="100%" alt="vadway logo" /></a>
       </div>
       <nav>
           <?php 
@@ -42,11 +52,11 @@
 
       </nav>
       <div class="misc">
-        <a href="#" id="shop"><img src=<?php echo vedway_dir_imgs()."shop-icon.svg"?> alt="shop" /></a>
+        <a href="<?php echo wc_get_cart_url(); ?>" id="shop"><img src=<?php echo vedway_dir_imgs()."shop-icon.svg"?> alt="shop" /></a>
         <a href="#" id="account"><img src=<?php echo vedway_dir_imgs()."account-icon.svg"?> alt="account" /></a>
         <a href="#" id="menu"><img src=<?php echo vedway_dir_imgs()."menu-icon.svg"?> alt="menu" /></a>
       </div>
     </div>
   </header>
-  <main>
+
             

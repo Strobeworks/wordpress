@@ -27,11 +27,11 @@
           </h2>
         </div>
         <div class="imgSlider">
-          <img src="assets/images/can.png" alt="" />
+          <img src=<?php echo vedway_dir_imgs()."can.png" ?> alt="" />
           <div class="sliderNav">
-            <i><img src="assets/images/arrow-left.svg" height="38px" alt="prev" /></i>
+            <i><img src=<?php echo vedway_dir_imgs()."arrow-left.png" ?> height="38px" alt="prev" /></i>
             <i>
-              <img src="assets/images/arrow-right.svg" height="38px" alt="next" /></i>
+              <img src=<?php echo vedway_dir_imgs()."arrow-right.png" ?> height="38px" alt="next" /></i>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
               bag.
             </p>
           </div>
-          <img src="assets/images/wImg.png" alt="" srcset="" />
+          <img src=<?php echo vedway_dir_imgs()."wImg.png" ?> alt="" srcset="" />
         </div>
       </div>
       <div class="right">
@@ -78,7 +78,7 @@
               bring Ayurvedic nourishment in just a few shakes.
             </p>
           </div>
-          <img src="assets/images/wImg.png" alt="" srcset="" />
+          <img src=<?php echo vedway_dir_imgs()."wImg.png" ?> alt="" srcset="" />
         </div>
 
         <div class="consumption">
@@ -89,7 +89,7 @@
               Mix at any time of the day.
             </p>
           </div>
-          <img src="assets/images/kidimg.png" alt="" srcset="" />
+          <img src=<?php echo vedway_dir_imgs()."kidimg.png" ?> alt="" srcset="" />
         </div>
       </div>
     </div>
@@ -97,22 +97,22 @@
 
   <section class="balancing">
     <div class="container">
-      <img src="assets/images/element-left.svg" alt="" srcset="" />
+      <img src=<?php echo vedway_dir_imgs()."element-left.png" ?> alt="" srcset="" />
       <div class="inner">
         <h2>
           Begin the <br />
           <strong>Balancing Act </strong>
         </h2>
       </div>
-      <img src="assets/images/element-right.svg" alt="" srcset="" />
+      <img src=<?php echo vedway_dir_imgs()."element-right.png" ?> alt="" srcset="" />
     </div>
   </section>
 
   <section class="atmosphere">
     <div class="container">
       <div class="illustration">
-        <img src="assets/images/atmosphere-section/atmos-img-ws.svg" alt="" width="20%" />
-        <img src="assets/images/atmosphere-section/med-person-ws.svg" alt="" width="100%" />
+        <img src=<?php echo vedway_dir_imgs()."atmosphere-section/atmos-img-ws.png" ?> alt="" width="20%" />
+        <img src=<?php echo vedway_dir_imgs()."atmosphere-section/med-person-ws.png" ?> alt="" width="100%" />
       </div>
       <div class="content">
         <div>
@@ -149,35 +149,35 @@
       <ul>
         <li>
           <div class="icon">
-            <img src="assets/images/made-with-love/veg.svg" alt="100% veg icon" srcset="" />
+            <img src=<?php echo vedway_dir_imgs()."made-with-love/veg.png" ?> alt="100% veg icon" srcset="" />
           </div>
           <p>100% veg</p>
         </li>
 
         <li>
           <div class="icon">
-            <img src="assets/images/made-with-love/veg.svg" alt="100% veg icon" srcset="" />
+            <img src=<?php echo vedway_dir_imgs()."made-with-love/veg.png" ?> alt="100% veg icon" srcset="" />
           </div>
           <p>Purity & Safety</p>
         </li>
 
         <li>
           <div class="icon">
-            <img src="assets/images/made-with-love/veg.svg" alt="100% veg icon" srcset="" />
+            <img src=<?php echo vedway_dir_imgs()."made-with-love/veg.png" ?> alt="100% veg icon" srcset="" />
           </div>
           <p>No Side Effects</p>
         </li>
 
         <li>
           <div class="icon">
-            <img src="assets/images/made-with-love/veg.svg" alt="100% veg icon" srcset="" />
+            <img src=<?php echo vedway_dir_imgs()."made-with-love/veg.png" ?> alt="100% veg icon" srcset="" />
           </div>
           <p>Clinically Proven</p>
         </li>
 
         <li>
           <div class="icon">
-            <img src="assets/images/made-with-love/veg.svg" alt="100% veg icon" srcset="" />
+            <img src=<?php echo vedway_dir_imgs()."made-with-love/veg.png" ?> alt="100% veg icon" srcset="" />
           </div>
           <p>Gluten Free</p>
         </li>
@@ -203,22 +203,22 @@
         <div class="sliderInner">
           <div class="slides">
             <div class="slide" id="slid1">
-              <img src="assets/images/Web 1920 - 4-image.png" alt="" srcset="" />
+              <img src=<?php echo vedway_dir_imgs()."Web 1920 - 4-image.png" ?> alt="" srcset="" />
             </div>
             <div class="slide" id="slid2">
-              <img src="assets/images/Web 1920 - 4-image.png" alt="" srcset="" />
+              <img src=<?php echo vedway_dir_imgs()."Web 1920 - 4-image.png" ?> alt="" srcset="" />
             </div>
             <div class="slide" id="slid3">
-              <img src="assets/images/Web 1920 - 4-image.png" alt="" srcset="" />
+              <img src=<?php echo vedway_dir_imgs()."Web 1920 - 4-image.png" ?> alt="" srcset="" />
             </div>
             <div class="slide" id="slid4">
-              <img src="assets/images/Web 1920 - 4-image.png" alt="" srcset="" />
+              <img src=<?php echo vedway_dir_imgs()."Web 1920 - 4-image.png" ?> alt="" srcset="" />
             </div>
           </div>
           <div class="sliderNav">
-            <a href="#slid1"><img src="assets/images/arrow-left-dark.svg" height="38px" alt="prev" /></a>
+            <a href="#slid1"><img src=<?php echo vedway_dir_imgs()."arrow-left-dark.png" ?> height="38px" alt="prev" /></a>
             <a href="#slid4">
-              <img src="assets/images/arrow-right-dark.svg" height="38px" alt="next" /></a>
+              <img src=<?php echo vedway_dir_imgs()."arrow-right-dark.png" ?> height="38px" alt="next" /></a>
           </div>
         </div>
       </div>
@@ -239,7 +239,7 @@
                 </p>
               </div>
               <div class="details">
-                <img src="assets/images/profile.jpg" alt="" />
+                <img src=<?php echo vedway_dir_imgs()."profile.jpg"?> alt="" />
                 <h4>Jhon Doe</h4>
               </div>
             </div>
@@ -252,7 +252,7 @@
                 </p>
               </div>
               <div class="details">
-                <img src="assets/images/profile.jpg" alt="" />
+                <img src=<?php echo vedway_dir_imgs()."profile.jpg"?> alt="" />
                 <h4>Jhon Doe</h4>
               </div>
             </div>
@@ -265,7 +265,7 @@
                 </p>
               </div>
               <div class="details">
-                <img src="assets/images/profile.jpg" alt="" />
+                <img src=<?php echo vedway_dir_imgs()."profile.jpg"?> alt="" />
                 <h4>Jhon Doe</h4>
               </div>
             </div>
@@ -278,7 +278,7 @@
                 </p>
               </div>
               <div class="details">
-                <img src="assets/images/profile.jpg" alt="" />
+                <img src=<?php echo vedway_dir_imgs()."profile.jpg" ?>alt="" />
                 <h4>Jhon Doe</h4>
               </div>
             </div>
