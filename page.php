@@ -5,26 +5,24 @@
     }elseif(is_page( 'contact-us')){
         include 'vedway-pages/contact-us.php';
 
-    }elseif(is_page( 'cart')){
+    }elseif(is_page( 'cart-disabled')){
         include 'vedway-pages/cart.php';        
     
-    } else{
+    }elseif(is_page( 'disable-my-accounts')){
+        include 'vedway-pages/my-account.php';
+    
+    }elseif(is_page( 'disable-reg')){
+        include 'vedway-pages/form-reg.php';
+    
+    }else{
     
     ?>
 <main>
     <div class="container" id="page_">
         <div class="page_inner">
-            <?php
-        if(have_posts()) {
-            while(have_posts()) : the_post();
-            if(get_the_title()=='about-us'){
-                wc_get_template_part( 'content', 'product' );
-            }
-        endwhile;
-        }
-    ?>
+            
 
-            <h1 class="page-hero__heading page.php"><?php the_title(); ?></h1>
+            <!--<h1 class="page-hero__heading page.php"><?php //the_title(); ?></h1>-->
 
 
             <?php the_content(); ?>

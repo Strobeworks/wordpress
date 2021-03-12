@@ -28,3 +28,32 @@ const toggleAccordian = () => {
     accordian.classList.toggle('active');
 
 }
+
+const single_extras = (value) => {
+    let ingredients = document.getElementById('ingredients');
+    let nutrition = document.getElementById('nutrition');
+    let blur = document.getElementsByClassName('vedway-product-main')[0];
+
+    const toggle_List_Close = () => {
+        if (ingredients.classList.contains('active')) {
+            ingredients.classList.remove('active');
+        } else if (nutrition.classList.contains('active')) {
+            nutrition.classList.remove('active');
+        }
+        blur.classList.remove('active');
+    }
+    const toggle_List_Open = (item) => {
+        item.classList.add('active');
+        blur.classList.add('active');
+    }
+
+    if (value == 'close') {
+        toggle_List_Close();
+    } else if (value == 'list') {
+        toggle_List_Open(ingredients);
+    } else if (value == 'chart') {
+        toggle_List_Open(nutrition);
+    }
+
+
+}

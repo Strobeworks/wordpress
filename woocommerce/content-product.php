@@ -44,6 +44,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
     <div class="productInner">
       <div class="productImg">
+        <img id='product_img_bg' src="<?php echo vedway_product_img_bg(); ?>" alt="" srcset="" />
         <a href="<?php echo get_the_permalink() ?>"><img src="<?php the_post_thumbnail_url('medium') ?>" alt=""
             srcset="" /></a>
       </div>

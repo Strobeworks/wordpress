@@ -45,6 +45,7 @@
 
     </div>
     <div class="accordian" id="accordian">
+        <img id='accordian_img' src="<?php echo vedway_dir_imgs().'about/accordian.png' ?>" alt="" srcset="">
         <div class="about-extra-close">
             <div id="knowmore" onclick="toggleAccordian()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12.982" height="58.472" viewBox="0 0 12.982 58.472">

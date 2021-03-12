@@ -21,16 +21,14 @@ if ( $cross_sells ) : ?>
 
 	<div class="cross-sells">
 		<?php
-		$heading = apply_filters( 'woocommerce_product_cross_sells_products_heading', __( 'More To Explore', 'woocommerce' ) );
+		$heading = apply_filters( 'woocommerce_product_cross_sells_products_heading', __( 'You may be interested in&hellip;', 'woocommerce' ) );
 
 		if ( $heading ) :
 			?>
 			<h2><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
-		<div class="container">
-			<div class="products">
-	
-	
+
+		<?php woocommerce_product_loop_start(); ?>
 
 			<?php foreach ( $cross_sells as $cross_sell ) : ?>
 
@@ -39,22 +37,12 @@ if ( $cross_sells ) : ?>
 
 					setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-					
+					wc_get_template_part( 'content', 'product' );
 				?>
-					<div class="_product">
-					<a href="<?php echo the_permalink() ?>">
-					<div class="card">
-						<img src="<?php echo the_post_thumbnail_url('medium') ?>" alt="" width="50px" srcset="">
-					</div>
-					</a>
-					<h4><?php echo the_title()?></h4>
-					</div>
-				
 
 			<?php endforeach; ?>
-	
-			</div>
-	
+
+		<?php woocommerce_product_loop_end(); ?>
 
 	</div>
 	<?php

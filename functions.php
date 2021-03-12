@@ -31,21 +31,27 @@
 				add_theme_support( 'woocommerce' );
 			// Remove WooCommerce Styles
 			
-			add_filter( 'woocommerce_enqueue_styles', 'vedway_dequeue_styles' );
-				function vedway_dequeue_styles( $enqueue_styles ) {
+			function vedway_dequeue_styles( $enqueue_styles ) {
 					
+					if(is_cart() | is_checkout()|is_account_page()){
+						return $enqueue_styles;
+					}else{
 						unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
 						unset( $enqueue_styles['woocommerce-layout'] );	// Remove the gloss
 						unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
 						return $enqueue_styles;
+					}
+						
 					
 					
-				}
+			}
+			add_filter( 'woocommerce_enqueue_styles', 'vedway_dequeue_styles' );
+
 			
-				function slug_disable_woocommerce_block_editor_styles() {
+			function slug_disable_woocommerce_block_editor_styles() {
 					wp_deregister_style( 'wc-block-editor' );
 					wp_deregister_style( 'wc-block-style' );
-				  }
+			}
 			add_action( 'enqueue_block_assets', 'slug_disable_woocommerce_block_editor_styles', 1, 1 );
 			
 			// Remove Shop Title
@@ -78,6 +84,22 @@
 	function vedway_dir_imgs(){
 		return get_template_directory_uri()."/assets/images/";
 	}
+	
+	function vedway_product_img_bg(){
+		static $r=0;
+		
+		$img=[
+			vedway_dir_imgs().'itembg1.png',
+			vedway_dir_imgs().'itembg2.png',
+			vedway_dir_imgs().'itembg3.png',
+			vedway_dir_imgs().'itembg4.png',
+		];
+
+		$send=$img[$r];
+		++$r;
+		return $send;
+		
+	}
 
 	function vedway_register_styles(){
 		$version=wp_get_theme()->get('Version');
@@ -87,7 +109,6 @@
 		if(is_front_page()){
 			wp_enqueue_style( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css' );
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
-
 		}
 	}
 	
@@ -201,7 +222,7 @@
 				//$selected = sanitize_title( $args['selected'] ) === $args['selected'] ? selected( $args['selected'], sanitize_title( $option ), false ) : selected( $args['selected'], $option, false );
 				//$html .= '<option value="' . esc_attr( $option ) . '" ' . $selected . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option, null, $attribute, $product ) ) . '</option>';
 				$checkbox='';
-				
+				$labelId= str_replace(" ","_",$product->name.$option);
 				if($product->weight){
 					$qty='<p>'. $product->weight.'g</p>';
 				}else{
@@ -210,7 +231,7 @@
 				if($args['selected']==$option){
 					$checkbox='checked';
 				}
-				$html .= '<input type="radio" onclick="vedway_available(this)"  '.$checkbox.' class="typeInput" value="' . esc_attr( $option ) . '" name="vedway_var_options" id="' . esc_attr( $option ) . '" ><label for="' . esc_attr( $option ) . '" class="typeLable">
+				$html .= '<input type="radio" onclick="vedway_available(this)"  '.$checkbox.' class="typeInput" value="' . esc_attr( $option ) . '" name="vedway_var_options" id="' . $labelId . '" ><label for="' . $labelId . '" class="typeLable">
 					<h4>' . esc_attr( $option ) . '</h4>'.$qty.'
 					</label>';
 			 }
