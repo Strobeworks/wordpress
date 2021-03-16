@@ -27,7 +27,8 @@ do_action( 'woocommerce_before_account_navigation' );
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
 			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
 			<?php //if($label){echo $label;} ?>
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
+				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>">
+				<span><?php echo esc_html( $label ); ?></span></a>
 			</li>
 		<?php endforeach; ?>
 	</ul>

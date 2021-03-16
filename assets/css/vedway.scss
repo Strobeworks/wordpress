@@ -173,17 +173,76 @@ main .page_inner a:hover {
     color: #333;
 }
 
+.page_inner .woocommerce-MyAccount-navigation {
+    & ul {
+        padding-right: 5%;
+    }
+}
+
+.vedway_address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7e6d4;
+}
+
+address {
+    font-style: normal;
+}
+
 .page_inner .woocommerce-MyAccount-navigation li {
-    margin: 5% 0;
+    transition: 300ms ease-in-out;
+
+    & span {
+        padding: 1rem 5px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.2);
+        display: block;
+        transition: border 500ms;
+        color: #333;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+        background-color: #fff;
+    }
+
+    &:hover {
+
+
+        & span {
+            color: var(--primery);
+            transform: translate(5px, -5px);
+            border-right: solid 5px var(--primery);
+        }
+    }
 }
 
-.page_inner .woocommerce-MyAccount-navigation a {
-    border-left: solid 5px transparent;
-    transition: border 500ms;
+
+
+.woocommerce table.my_account_orders .button {
+    background-color: var(--accent);
+    color: #fff;
+    border: 1px solid transparent;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+        background-color: #fff;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+
+    }
 }
 
-.page_inner .woocommerce-MyAccount-navigation a:hover {
-    border-left: solid 5px var(--accent);
+.woocommerce-MyAccount-content button.woocommerce-Button {
+    background-color: var(--primery);
+    color: #fff;
+    border: 1px solid transparent;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+        background-color: #fff;
+        color: var(--primery);
+        border: 1px solid var(--primery);
+
+    }
 }
 
 .woocommerce-MyAccount-content input {
@@ -194,6 +253,7 @@ main .page_inner a:hover {
 
 .woocommerce-MyAccount-content label {
     margin-bottom: 5px;
+    color: var(--accent);
 }
 
 .woocommerce-MyAccount-content label span {
@@ -201,7 +261,7 @@ main .page_inner a:hover {
 }
 
 .woocommerce-MyAccount-content p {
-    margin: 2% 0;
+    margin-bottom: 2rem !important;
 }
 
 .sideMenu {
@@ -1161,7 +1221,89 @@ footer a {
     color: #fff;
 }
 
-/*woo btn*/
+/*woo */
+#customer_login {
+    & input {
+        border: 1px solid transparent;
+        border-bottom-color: #333;
+        padding: 5px;
+        transition: 500ms ease-in-out;
+
+        &:focus {
+            border: 1px solid #333;
+        }
+    }
+
+    & button {
+        background-color: var(--primery);
+        color: #fff;
+        border: 1px solid var(--primery);
+        transition: 500ms ease-in-out;
+
+        &:hover {
+            background-color: #fff;
+            color: var(--primery);
+        }
+    }
+
+    & p {
+        margin: 2% 0;
+    }
+
+    & .woocommerce-privacy-policy-text {
+        font-size: 14px;
+    }
+
+
+}
+
+.coupon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & #coupon_code {
+        color: #707070;
+        text-transform: capitalize;
+        border: 1px solid var(--primery);
+        width: 50%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    & button.button {
+        background-color: var(--primery);
+        color: #fff;
+        border: 1px solid var(--primery);
+        transition: 500ms ease-in-out;
+
+        &:hover {
+            background-color: #fff;
+            color: var(--primery);
+        }
+    }
+}
+
+#update_cart {
+    background-color: var(--primery);
+    color: #fff;
+    border: 1px solid var(--primery);
+    transition: 500ms ease-in-out;
+
+    &:hover {
+        background-color: #fff;
+        color: var(--primery);
+    }
+}
+
+.woocommerce-shipping-destination {
+    font-size: 16px !important;
+}
+
+#payment_img img {
+    width: auto;
+}
+
 .woocommerce-info {
     border-top-color: var(--primery);
 
@@ -2074,11 +2216,11 @@ section.cards {
 
 .related.products ._product,
 .cross-sells ._product {
-    margin: 0 50px;
+    margin: 0 40px;
 
     & h4 {
-        margin-top: 50px;
-        font-size: 36px;
+        margin-top: 40px;
+        font-size: 34px;
         font-weight: 400;
         text-transform: capitalize;
     }
@@ -2095,8 +2237,8 @@ section.cards {
 .related.products .card,
 .cross-sells .card {
     background-color: #ACACAC;
-    width: 450px;
-    height: 600px;
+    width: 280px;
+    height: 400px;
     padding: 2%;
     margin: 0 auto;
     border-radius: 10px;
