@@ -73,22 +73,26 @@
         <div class="container">
 
             <div class="left">
-                <p>Over the years, we realized health issues occur often in this stressful world, yet
+                <p>
+                    Over the years, we realized health issues occur often in this stressful world, yet
                     doctors can only give short-term solutions. These medicines tend to leave lasting
                     side effects, so we decided to dive into our rich Indian traditions. Let’s bring back the
                     trust and wisdom of age-old Ayurveda. Time is of the essence as we multitask daily
                     without finding time to rejuvenate. Hence, it’s time to turn a new chapter by bringing
                     back a balanced lifestyle filled with Ayurvedic nutrition. Leave behind the days of
-                    juggling nutrition & stress with our all-natural product line.</p>
+                    juggling nutrition & stress with our all-natural product line.
+                </p>
             </div>
             <div class="right">
-                <p>Over the years, we realized health issues occur often in this stressful world, yet
+                <p>
+                    Over the years, we realized health issues occur often in this stressful world, yet
                     doctors can only give short-term solutions. These medicines tend to leave lasting
                     side effects, so we decided to dive into our rich Indian traditions. Let’s bring back the
                     trust and wisdom of age-old Ayurveda. Time is of the essence as we multitask daily
                     without finding time to rejuvenate. Hence, it’s time to turn a new chapter by bringing
                     back a balanced lifestyle filled with Ayurvedic nutrition. Leave behind the days of
-                    juggling nutrition & stress with our all-natural product line.</p>
+                    juggling nutrition & stress with our all-natural product line.
+                </p>
             </div>
         </div>
     </div>

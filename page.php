@@ -14,7 +14,23 @@
     }elseif(is_page( 'disable-reg')){
         include 'vedway-pages/form-reg.php';
     
-    }else{
+    }elseif( is_order_received_page()){?>
+    <main>
+     <div class="container" id="page_">
+        <div class="page_inner is_thankyou">
+
+            <?php the_content(); ?>
+
+        </div>
+
+     </div>
+    </main>
+
+
+
+
+    
+   <?php }else{
     
     ?>
 <main>

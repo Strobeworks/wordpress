@@ -6,7 +6,8 @@ get_header( 'shop' );
 <section class="banner-section">
     <div class="container">
 	<div class="banner" >
-      <img src="<?php echo vedway_dir_imgs()."bg-product.svg" ?>" alt="banner" width="100%" srcset="" />
+      <img id="banner_main" src="<?php echo vedway_dir_imgs()."bg-product.png" ?>" alt="banner" width="100%" srcset="" />
+	  <img id="banner_mob" src="<?php echo vedway_dir_imgs()."bg-product-mob.png" ?>" alt="banner" width="100%" srcset="" />
     </div>
 	</div>
   </section>

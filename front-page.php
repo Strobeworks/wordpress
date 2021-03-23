@@ -121,7 +121,12 @@
   <div class="container">
 
     <div class="illustration">
-
+    <div class="_headerMob">
+        <h2 class="header_mob">
+          <span> Vedic</span> <br />
+          ‘Atmosphere’
+        </h2>
+      </div>
       <div class="atmosTop">
         <div class="atmosTopInner">
           <img src="<?php echo vedway_dir_imgs()."atmosphere-section/atmosTopBg.png" ?>" alt="" width="20%" />
@@ -250,6 +255,12 @@
       </h2>
     </div>
     <ul data-aos="fade-left" data-aos-delay="1000">
+      <li class="header_madeW">
+      <h2 class="header">
+        <span>Made </span><br />
+        With Love
+      </h2>
+      </li>
       <li>
         <div class="icon">
           <img src=<?php echo vedway_dir_imgs()."made-with-love/veg.svg" ?> alt="100% veg icon" srcset="" />
@@ -298,12 +309,14 @@
         <span>Heart</span> <br />
         Of Herbs
       </h2>
+      <div>
       <h3>JESHTHAMAD</h3>
       <ul>
         <li>Improves Skin Texture</li>
         <li>Regulates Hormones</li>
         <li>Keeps Respiratory Tract Healthy</li>
       </ul>
+      </div>
     </div>
     <div class="slider" data-aos="fade-left" data-aos-duration="500" data-aos-offset="150">
 

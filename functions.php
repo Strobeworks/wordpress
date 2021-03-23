@@ -14,7 +14,8 @@
 	function vedway_menu(){
 		$location=array(
 			'primery'=>"primery Menu",
-			'footer'=>"footer Menu"
+			'aside'=>"aside Menu",
+			'footer'=>"footer Menu",
 		);
 		register_nav_menus( $location );
 	}

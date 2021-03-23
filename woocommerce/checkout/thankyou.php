@@ -38,9 +38,11 @@ defined( 'ABSPATH' ) || exit;
 			</p>
 
 		<?php else : ?>
-
-			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-
+			<div id="_thankyouDiv">
+			<h2 style="text-align:center;margin-bottom:4%" class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been placed.', 'woocommerce' ), $order ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+		
+			</div>
+			<div class="vedway_order_thankyou">
 			<ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
 
 				<li class="woocommerce-order-overview__order order">
@@ -84,5 +86,5 @@ defined( 'ABSPATH' ) || exit;
 		<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), null ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 
 	<?php endif; ?>
-
+ </div>
 </div>
