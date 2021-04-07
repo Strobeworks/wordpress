@@ -1,3 +1,16 @@
+//vedway splash screen
+const vedway_splash = () => {
+    let body = document.body;
+
+    console.log(document.readyState);
+    // body.classList.remove('vedway-loading')
+
+}
+
+//window.addEventListener('readystatechange', vedway_splash());
+
+
+
 var anchorOne = document.getElementById("menu");
 var anchorTwo = document.getElementById("menuIco");
 
@@ -25,7 +38,9 @@ const vedway_available = (e) => {
 
 const toggleAccordian = () => {
     let accordian = document.getElementById('accordian');
+    let arrow = document.getElementById('svg');
     accordian.classList.toggle('active');
+    arrow.classList.toggle('active');
 
 }
 

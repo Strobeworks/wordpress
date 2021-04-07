@@ -14,6 +14,9 @@
     }elseif(is_page( 'disable-reg')){
         include 'vedway-pages/form-reg.php';
     
+    }elseif(is_page( 'blog')){
+        include 'vedway-pages/blog.php';
+    
     }elseif( is_order_received_page()){?>
     <main>
      <div class="container" id="page_">

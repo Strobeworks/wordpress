@@ -142,23 +142,23 @@
           <img id="md" src="<?php echo vedway_dir_imgs()."atmosphere-section/atmosBottomMid.png" ?>" width="496.408" height="415.446" alt=""
             width="20%" />
           <div class="icons">
-            <span onclick="atmosGoto(0)">
+            <span onclick="atmosGoto(0)" data-aos="fade-up" data-aos-duration="500"  data-aos-delay="300" data-aos-easing="ease">
               <img src="<?php echo vedway_dir_imgs()."atmosphere-section/icons/one.png" ?>" alt="" width="20%" />
             </span>
 
-            <span onclick="atmosGoto(1)">
+            <span onclick="atmosGoto(1)" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-easing="ease">
               <img src="<?php echo vedway_dir_imgs()."atmosphere-section/icons/two.png" ?>" alt="" width="20%" />
             </span>
 
-            <span onclick="atmosGoto(2)">
+            <span onclick="atmosGoto(2)" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700" data-aos-easing="ease">
               <img src="<?php echo vedway_dir_imgs()."atmosphere-section/icons/three.png" ?>" alt="" width="20%" />
             </span>
 
-            <span onclick="atmosGoto(3)">
+            <span onclick="atmosGoto(3)" data-aos="fade-up" data-aos-duration="500" data-aos-delay="900" data-aos-easing="ease">
               <img src="<?php echo vedway_dir_imgs()."atmosphere-section/icons/four.png" ?>" alt="" width="20%" />
             </span>
 
-            <span onclick="atmosGoto(4)">
+            <span onclick="atmosGoto(4)" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1100" data-aos-easing="ease">
               <img src="<?php echo vedway_dir_imgs()."atmosphere-section/icons/five.png" ?>" alt="" width="20%" />
             </span>
           </div>

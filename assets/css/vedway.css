@@ -39,6 +39,15 @@ body {
   color: #535353;
 }
 
+body.vedway-loading::before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  z-index: 10;
+}
+
 :target:before {
   content: '';
   display: block;
@@ -54,6 +63,10 @@ h5,
 h6 {
   font-family: 'Montserrat';
   margin: 1rem 0;
+}
+
+p:empty {
+  display: none;
 }
 
 p {
@@ -178,8 +191,8 @@ main #page_ {
 #_thankyouDiv {
   color: #fff;
   background-color: var(--primery);
-  margin: 3% -5% 5% -5%;
-  padding: 2%;
+  margin: 2rem -5% 3.5rem -5%;
+  padding: 2% 5%;
 }
 
 main .page_inner {
@@ -305,7 +318,7 @@ address {
   position: fixed;
   top: 0;
   right: -110%;
-  background-color: #f2f2f2;
+  background-color: #fffbf5;
   z-index: 5;
   padding: 10%;
   -webkit-transition: right 500ms ease-in-out;
@@ -1440,7 +1453,8 @@ footer a {
   color: var(--secondary);
 }
 
-.btnAlternate {
+.btnAlternate,
+#vedway_contact_us .vedway_contactUs_form button {
   width: 315px;
   padding: 23px 48px 23px 49px;
   border-radius: 10px;
@@ -1457,7 +1471,8 @@ footer a {
   transition: background-color 500ms ease;
 }
 
-.btnAlternate:hover {
+.btnAlternate:hover,
+#vedway_contact_us .vedway_contactUs_form button:hover {
   background-color: #fff;
   color: var(--primery);
   border: 2px solid var(--primery);
@@ -1472,6 +1487,15 @@ footer a {
 }
 
 /*woo */
+.woocommerce form .show-password-input,
+.woocommerce-page form .show-password-input {
+  top: 0;
+}
+
+.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--downloads {
+  display: none;
+}
+
 .woocommerce-message {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1529,6 +1553,7 @@ footer a {
 }
 
 .button.wc-forward {
+  text-align: center;
   background-color: var(--primery);
   color: #fff;
   border: 1px solid var(--primery);
@@ -1648,13 +1673,18 @@ footer a {
   border: 1px solid var(--primery);
 }
 
+.select2-container .select2-selection--single {
+  height: 2rem;
+}
+
 .vedway_rTs,
 .woocommerce-notices-wrapper .button.wc-forward {
   background-color: var(--accent) !important;
-  border: 1px solid transparent;
+  border: 1px solid transparent !important;
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
   color: #fff !important;
+  margin-bottom: 1%;
 }
 
 .vedway_rTs:hover,
@@ -1813,6 +1843,15 @@ section.cards {
   transition: -webkit-transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+.about-extra #knowmore #svg.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
 }
 
 .about-extra-close #knowmore svg {
@@ -2198,10 +2237,42 @@ section.cards {
   z-index: -1;
   height: 60%;
   bottom: 4%;
+  -webkit-animation: sway 10s ease-in-out infinite;
+          animation: sway 10s ease-in-out infinite;
+}
+
+@-webkit-keyframes sway {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes sway {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
 }
 
 .vedway-product:nth-child(1) #product_img_bg {
-  right: 12%;
+  right: 15%;
 }
 
 .vedway-product:nth-child(2) .productInfo .header {
@@ -2217,11 +2288,11 @@ section.cards {
 }
 
 .vedway-product:nth-child(2) #product_img_bg {
-  left: 4%;
+  left: 6%;
 }
 
 .vedway-product:nth-child(3) #product_img_bg {
-  right: 12%;
+  right: 16%;
 }
 
 .vedway-product:nth-child(3) .productsSvg {
@@ -2242,7 +2313,7 @@ section.cards {
 }
 
 .vedway-product:nth-child(4) #product_img_bg {
-  left: 7%;
+  left: 10%;
 }
 
 .vedway-products .vedway-product .container .productImg {
@@ -2353,12 +2424,13 @@ section.cards {
 .availableType .typeLable h4 {
   font-size: 18px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .availableType .typeLable p {
   position: absolute;
   bottom: 0px;
-  left: 10%;
+  left: 15%;
   letter-spacing: 2px;
   text-transform: lowercase;
 }
@@ -2506,7 +2578,7 @@ section.cards {
 
 .productForm .availableType,
 .productForm .quantity {
-  padding: 0.5rem 0;
+  padding-bottom: 0.5rem;
 }
 
 .productForm .availableType p,
@@ -2515,7 +2587,7 @@ section.cards {
 }
 
 .quantity input[type='number'] {
-  width: auto;
+  width: 15%;
   border-radius: 10px;
   border: 1px solid var(--primery);
   padding: 2%;
@@ -3199,11 +3271,11 @@ section.cards {
   }
   .availableType .typeLable h4 {
     font-size: 16px;
-    margin: 10% 0;
+    margin: 10% auto;
   }
   .availableType .typeLable p {
     bottom: 1%;
-    left: 5%;
+    left: 14%;
     font-size: 16px;
   }
   .vedway-product .productImg::before {
@@ -3625,6 +3697,13 @@ section.cards {
 }
 
 @media screen and (max-width: 960px) {
+  main .page_inner.is_thankyou {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, var(--primery)), color-stop(10%, #fff));
+    background: linear-gradient(var(--primery) 10%, #fff 10%);
+  }
+  #_thankyouDiv h2 {
+    font-size: 22px;
+  }
   .heroSection {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #f7e4d0), color-stop(50%, #79c9a5));
     background: linear-gradient(90deg, #f7e4d0 50%, #79c9a5 50%);
@@ -4440,6 +4519,9 @@ section.cards {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .heroSection .slider .imgSlider {
     max-width: 55%;
@@ -4457,8 +4539,17 @@ section.cards {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
+  .heroSection .slider .content-img ul {
+    padding-left: 5px;
+  }
+  .heroSection .slider .content-img ul li {
+    list-style-type: disc;
+  }
+  .heroSection .slider .content-img ul li::marker {
+    text-align: center;
+  }
   .heroSection .slider h2 {
-    margin: 2% 0;
+    margin: 0;
     font-size: 32px;
   }
   .heroSection .slider p {
@@ -4765,7 +4856,7 @@ section.cards {
   }
   .availableType .typeLable h4 {
     font-size: 16px;
-    margin: 10% 0;
+    margin: 10% auto;
   }
   .availableType .typeLable p {
     display: none;
@@ -4872,6 +4963,9 @@ section.cards {
 }
 
 @media screen and (max-width: 360px) {
+  p:empty {
+    display: none;
+  }
   .cards .item.one aside h2 {
     font-size: 24px;
   }
@@ -4998,9 +5092,44 @@ section.cards {
   .vedway_single_top .productInfo .info p {
     font-size: 16px;
   }
+  .vedway-product .productInfo .blocks .blockOne p,
+  .product .productInfo ul {
+    font-size: 16px;
+  }
+  .vedway-products .vedway-product .header span,
+  .product .price {
+    font-size: 28px;
+  }
+  .vedway-product .productInfo .blocks {
+    margin: 2%;
+  }
+  .productForm .availableType .types {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .availableType .typeLable h4 {
+    margin: 10% auto;
+  }
+  .availableType .typeLable {
+    margin: 2% 0%;
+  }
+  .vedway_single_top .productImg img {
+    padding: 5% 0;
+  }
+  .vedway-product-single .vedway_single_top .single_extra {
+    padding: 10% 5%;
+  }
+  .vedway_single_top .single_extra .list,
+  .vedway_single_top .single_extra .chart {
+    margin: 2% 0;
+  }
   .related.products h2 {
     text-align: center;
     font-size: 1.5rem;
+  }
+  body:nth-child(5) {
+    display: none;
   }
 }
 /*# sourceMappingURL=vedway.css.map */

@@ -46,30 +46,6 @@
     </div>
     <div class="accordian" id="accordian">
         <img id='accordian_img' src="<?php echo vedway_dir_imgs().'about/accordian.png' ?>" alt="" srcset="">
-        <div class="about-extra-close">
-            <div id="knowmore" onclick="toggleAccordian()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.982" height="58.472" viewBox="0 0 12.982 58.472">
-                    <defs>
-                        <style>
-                            .a {
-                                stroke: #010000;
-                            }
-                        </style>
-                    </defs>
-                    <g transform="translate(0.5 57.972) rotate(-90)">
-                        <g transform="translate(0 5.205)">
-                            <rect class="a" width="56.176" height="1.57" transform="translate(0 0)" />
-                        </g>
-                        <g transform="translate(50.493 0)">
-                            <path class="a"
-                                d="M.773,0A.747.747,0,0,0,.147.363.958.958,0,0,0,.32,1.589L5.238,5.645a.462.462,0,0,1,.2.323.463.463,0,0,1-.2.325l-4.923,4.1A.96.96,0,0,0,.149,11.62a.712.712,0,0,0,1.078.191l4.923-4.1a2.244,2.244,0,0,0-.007-3.488L1.225.167A.7.7,0,0,0,.773,0Z"
-                                transform="translate(0 0)" />
-                        </g>
-                    </g>
-                </svg>
-
-            </div>
-        </div>
         <div class="container">
 
             <div class="left">

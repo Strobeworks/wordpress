@@ -1,0 +1,268 @@
+#vedway_contact_us {
+  background-color: #f7e6d4;
+  padding: 5%;
+}
+
+#vedway_contact_us .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#vedway_contact_us .content,
+#vedway_contact_us .tagLine {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+#vedway_contact_us .content strong,
+#vedway_contact_us .tagLine strong {
+  font-weight: 800;
+}
+
+#vedway_contact_us .tagLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+}
+
+#vedway_contact_us .tagLine h1 {
+  font-size: 8vw;
+  margin: 0;
+  line-height: 130px;
+}
+
+#vedway_contact_us .tagLine p {
+  font-size: 3vw;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+#vedway_contact_us p {
+  font-size: 20px;
+}
+
+#vedway_contact_us p a {
+  color: #af5c2c;
+}
+
+#vedway_contact_us p a:hover {
+  color: rgba(175, 92, 44, 0.8);
+}
+
+#vedway_contact_us #link_address {
+  color: #333;
+}
+
+#vedway_contact_us #link_address:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#vedway_contact_us .vedway_contactUs_form {
+  margin-top: 10%;
+}
+
+#vedway_contact_us .vedway_contactUs_form input,
+#vedway_contact_us .vedway_contactUs_form textarea {
+  border: 0;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid transparent;
+  border-bottom-color: #333;
+  -webkit-transition: border 300ms ease-in-out;
+  transition: border 300ms ease-in-out;
+  background: transparent;
+}
+
+#vedway_contact_us .vedway_contactUs_form input::-webkit-input-placeholder,
+#vedway_contact_us .vedway_contactUs_form textarea::-webkit-input-placeholder {
+  text-transform: capitalize;
+  font-family: 'Montserrat';
+}
+
+#vedway_contact_us .vedway_contactUs_form input:-ms-input-placeholder,
+#vedway_contact_us .vedway_contactUs_form textarea:-ms-input-placeholder {
+  text-transform: capitalize;
+  font-family: 'Montserrat';
+}
+
+#vedway_contact_us .vedway_contactUs_form input::-ms-input-placeholder,
+#vedway_contact_us .vedway_contactUs_form textarea::-ms-input-placeholder {
+  text-transform: capitalize;
+  font-family: 'Montserrat';
+}
+
+#vedway_contact_us .vedway_contactUs_form input::placeholder,
+#vedway_contact_us .vedway_contactUs_form textarea::placeholder {
+  text-transform: capitalize;
+  font-family: 'Montserrat';
+}
+
+#vedway_contact_us .vedway_contactUs_form input:hover, #vedway_contact_us .vedway_contactUs_form input:focus,
+#vedway_contact_us .vedway_contactUs_form textarea:hover,
+#vedway_contact_us .vedway_contactUs_form textarea:focus {
+  border-color: #333;
+}
+
+#vedway_contact_us .vedway_contactUs_form input[type='number'] {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+
+#vedway_contact_us .vedway_contactUs_form button {
+  margin-top: 5%;
+  padding: 2% 6%;
+  width: auto;
+}
+
+#vedway_blog .blog_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 80px 0;
+  background-color: #79c9a5;
+}
+
+#vedway_blog #header_img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  text-align: center;
+}
+
+#vedway_blog .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  color: #fff;
+  padding-right: 15%;
+}
+
+#vedway_blog .content h1 {
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 70px;
+  text-transform: capitalize;
+}
+
+#vedway_blog .content h2 {
+  font-weight: 800;
+}
+
+#vedway_blog .content p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 50px;
+}
+
+#vedway_blog .content a.btn {
+  margin-top: 20px;
+}
+
+#vedway_blog .blog_.one_ {
+  padding: 4%;
+}
+
+#vedway_blog .blog_.one_ .blog_items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#vedway_blog .blog_.one_ .blog_items .item {
+  padding: 2%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#vedway_blog .blog_.one_ .blog_items .item .img_card {
+  position: relative;
+}
+
+#vedway_blog .blog_.one_ .blog_items .item .img_card i {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: transparent;
+  background-clip: text;
+  background-color: #f88b77;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+  padding: 0 !important;
+  clear: both;
+}
+
+@media (max-width: 960px) {
+  #vedway_contact_us .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #vedway_contact_us .tagLine {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 5%;
+  }
+  #vedway_contact_us .tagLine h1 {
+    line-height: 80px;
+  }
+  #vedway_contact_us .content,
+  #vedway_contact_us .tagLine {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  #vedway_contact_us .tagLine {
+    margin-bottom: 10%;
+  }
+  #vedway_contact_us .tagLine h1 {
+    font-size: 70px;
+    line-height: 60px;
+  }
+  #vedway_contact_us p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  #vedway_contact_us .tagLine h1 {
+    font-size: 60px;
+    line-height: 50px;
+  }
+}
+/*# sourceMappingURL=vedway_pages.css.map */

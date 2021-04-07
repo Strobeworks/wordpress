@@ -107,6 +107,9 @@
 		wp_enqueue_style( 'vedway-style-main', get_template_directory_uri().'/assets/css/vedway.css',array(),$version,'all' );
 		wp_enqueue_style( 'vedway-style', get_template_directory_uri().'/style.css',array(),$version,'all' );
 		wp_enqueue_style( 'vedway-fontawesome','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css',array(),'5.15.2','all' );
+		if(is_page( 'contact-us') || is_page( 'blog')){
+			wp_enqueue_style( 'vedway-style-pages', get_template_directory_uri().'/assets/css/vedway_pages.css',array(),$version,'all' );
+		}
 		if(is_front_page()){
 			wp_enqueue_style( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css' );
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );

@@ -35,11 +35,11 @@ const atmosGoto = (slideNo) => {
     let url = atmosTopFg.baseURI + 'wp-content/themes/vedway/assets/images/atmosphere-section/icons/';
     switch (slideNo) {
         case 0:
-            imgs = url + 'one.png';
+            imgs = url + 'oneL.png';
             animName = 'atmosTopSpin'
             break;
         case 1:
-            imgs = url + 'two.png';
+            imgs = url + 'twoL.png';
             break;
         case 2:
             imgs = url + 'three.png';

@@ -38,6 +38,14 @@ body {
   font-family: 'Quicksand', sans-serif;
   color: #535353;
 }
+body.vedway-loading::before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  z-index: 10;
+}
 
 :target:before {
   content: '';
@@ -55,7 +63,9 @@ h6 {
   font-family: 'Montserrat';
   margin: 1rem 0;
 }
-
+p:empty {
+  display: none;
+}
 p {
   margin: 0.2rem 0;
 }
@@ -155,8 +165,8 @@ main #page_ {
 #_thankyouDiv {
   color: #fff;
   background-color: var(--primery);
-  margin: 3% -5% 5% -5%;
-  padding: 2%;
+  margin: 2rem -5% 3.5rem -5%;
+  padding: 2% 5%;
 }
 main .page_inner {
   overflow: hidden;
@@ -272,7 +282,7 @@ address {
   position: fixed;
   top: 0;
   right: -110%;
-  background-color: #f2f2f2;
+  background-color: #fffbf5;
 
   z-index: 5;
   padding: 10%;
@@ -1205,7 +1215,8 @@ footer a {
   color: var(--secondary);
 }
 
-.btnAlternate {
+.btnAlternate,
+#vedway_contact_us .vedway_contactUs_form button {
   width: 315px;
   padding: 23px 48px 23px 49px;
   border-radius: 10px;
@@ -1220,7 +1231,8 @@ footer a {
   transition: background-color 500ms ease;
 }
 
-.btnAlternate:hover {
+.btnAlternate:hover,
+#vedway_contact_us .vedway_contactUs_form button:hover {
   background-color: #fff;
   color: var(--primery);
   border: 2px solid var(--primery);
@@ -1238,7 +1250,13 @@ footer a {
 }
 
 /*woo */
-
+.woocommerce form .show-password-input,
+.woocommerce-page form .show-password-input {
+  top: 0;
+}
+.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--downloads {
+  display: none;
+}
 .woocommerce-message {
   display: flex;
   flex-direction: column;
@@ -1289,6 +1307,7 @@ footer a {
 }
 
 .button.wc-forward {
+  text-align: center;
   background-color: var(--primery);
   color: #fff;
   border: 1px solid var(--primery);
@@ -1390,13 +1409,17 @@ footer a {
     border: 1px solid var(--primery);
   }
 }
+.select2-container .select2-selection--single {
+  height: 2rem;
+}
 
 .vedway_rTs,
 .woocommerce-notices-wrapper .button.wc-forward {
   background-color: var(--accent) !important;
-  border: 1px solid transparent;
+  border: 1px solid transparent !important;
   transition: all 500ms ease-in-out;
   color: #fff !important;
+  margin-bottom: 1%;
 
   &:hover {
     background-color: #fff !important;
@@ -1558,6 +1581,10 @@ section.cards {
 .about-extra #knowmore svg {
   transform: translateY(10px);
   transition: transform 500ms ease-in-out;
+}
+.about-extra #knowmore #svg.active {
+  transform: rotate(180deg);
+  transition: transform 300ms ease-in-out;
 }
 
 .about-extra-close #knowmore svg {
@@ -1904,10 +1931,22 @@ section.cards {
     z-index: -1;
     height: 60%;
     bottom: 4%;
+    animation: sway 10s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 
   &:nth-child(1) #product_img_bg {
-    right: 12%;
+    right: 15%;
   }
 
   &:nth-child(2) {
@@ -1924,13 +1963,13 @@ section.cards {
     }
 
     & #product_img_bg {
-      left: 4%;
+      left: 6%;
     }
   }
 
   &:nth-child(3) {
     & #product_img_bg {
-      right: 12%;
+      right: 16%;
     }
 
     & .productsSvg {
@@ -1953,7 +1992,7 @@ section.cards {
     }
 
     & #product_img_bg {
-      left: 7%;
+      left: 10%;
     }
   }
 }
@@ -2049,12 +2088,13 @@ section.cards {
   & h4 {
     font-size: 18px;
     text-align: center;
+    margin: 0 auto;
   }
 
   & p {
     position: absolute;
     bottom: 0px;
-    left: 10%;
+    left: 15%;
     letter-spacing: 2px;
     text-transform: lowercase;
   }
@@ -2172,7 +2212,7 @@ section.cards {
 
 .productForm .availableType,
 .productForm .quantity {
-  padding: 0.5rem 0;
+  padding-bottom: 0.5rem;
 
   & p {
     margin-bottom: 2%;
@@ -2180,7 +2220,7 @@ section.cards {
 }
 
 .quantity input[type='number'] {
-  width: auto;
+  width: 15%;
   border-radius: 10px;
   border: 1px solid var(--primery);
   padding: 2%;
@@ -2806,12 +2846,12 @@ section.cards {
 
     & h4 {
       font-size: 16px;
-      margin: 10% 0;
+      margin: 10% auto;
     }
 
     & p {
       bottom: 1%;
-      left: 5%;
+      left: 14%;
       font-size: 16px;
     }
   }
@@ -3345,6 +3385,14 @@ section.cards {
 }
 
 @media screen and (max-width: 960px) {
+  main .page_inner.is_thankyou {
+    background: linear-gradient(var(--primery) 10%, #fff 10%);
+  }
+  #_thankyouDiv {
+    & h2 {
+      font-size: 22px;
+    }
+  }
   .heroSection {
     background: linear-gradient(90deg, #f7e4d0 50%, #79c9a5 50%);
 
@@ -4266,6 +4314,8 @@ section.cards {
     }
     & .slider {
       flex-direction: row-reverse;
+      align-items: flex-start;
+
       & .imgSlider {
         max-width: 55%;
         text-align: left;
@@ -4276,9 +4326,18 @@ section.cards {
       & .content-img {
         display: flex;
         flex-direction: column-reverse;
+        & ul {
+          padding-left: 5px;
+          & li {
+            list-style-type: disc;
+            &::marker {
+              text-align: center;
+            }
+          }
+        }
       }
       & h2 {
-        margin: 2% 0;
+        margin: 0;
         font-size: 32px;
       }
       & p {
@@ -4610,7 +4669,7 @@ section.cards {
   .availableType .typeLable {
     & h4 {
       font-size: 16px;
-      margin: 10% 0;
+      margin: 10% auto;
     }
 
     & p {
@@ -4736,6 +4795,9 @@ section.cards {
 }
 
 @media screen and (max-width: 360px) {
+  p:empty {
+    display: none;
+  }
   .cards {
     & .item.one {
       & aside {
@@ -4899,17 +4961,53 @@ section.cards {
     font-weight: 800;
     font-size: 18px;
   }
-  .vedway_single_top .productInfo .info h1 {
+  .vedway_single_top .productInfo .info {
+    & h1 {
+      font-size: 28px;
+    }
+    & h2 {
+      font-size: 26px;
+    }
+    & p {
+      font-size: 16px;
+    }
+  }
+
+  .vedway-product .productInfo .blocks .blockOne p,
+  .product .productInfo ul {
+    font-size: 16px;
+  }
+  .vedway-products .vedway-product .header span,
+  .product .price {
     font-size: 28px;
   }
-  .vedway_single_top .productInfo .info h2 {
-    font-size: 26px;
+  .vedway-product .productInfo .blocks {
+    margin: 2%;
   }
-  .vedway_single_top .productInfo .info p {
-    font-size: 16px;
+  .productForm .availableType .types {
+    justify-content: space-between;
+  }
+  .availableType .typeLable h4 {
+    margin: 10% auto;
+  }
+  .availableType .typeLable {
+    margin: 2% 0%;
+  }
+  .vedway_single_top .productImg img {
+    padding: 5% 0;
+  }
+  .vedway-product-single .vedway_single_top .single_extra {
+    padding: 10% 5%;
+  }
+  .vedway_single_top .single_extra .list,
+  .vedway_single_top .single_extra .chart {
+    margin: 2% 0;
   }
   .related.products h2 {
     text-align: center;
     font-size: 1.5rem;
+  }
+  body:nth-child(5) {
+    display: none;
   }
 }

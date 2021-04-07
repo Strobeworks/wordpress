@@ -1,0 +1,190 @@
+#vedway_contact_us {
+  background-color: #f7e6d4;
+  padding: 5%;
+  & .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  & .content,
+  .tagLine {
+    flex: 1 1 50%;
+    & strong {
+      font-weight: 800;
+    }
+  }
+  & .tagLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    & h1 {
+      font-size: 8vw;
+      margin: 0;
+      line-height: 130px;
+    }
+    & p {
+      font-size: 3vw;
+      margin: 0;
+      margin-left: 1rem;
+    }
+  }
+  & p {
+    font-size: 20px;
+    & a {
+      color: #af5c2c;
+      &:hover {
+        color: rgba($color: #af5c2c, $alpha: 0.8);
+      }
+    }
+  }
+  & #link_address {
+    color: #333;
+    &:hover {
+      color: rgba($color: #000000, $alpha: 0.5);
+    }
+  }
+  & .vedway_contactUs_form {
+    margin-top: 10%;
+    & input,
+    textarea {
+      border: 0;
+      padding: 10px 10px 30px 10px;
+      border: 1px solid transparent;
+      border-bottom-color: #333;
+      transition: border 300ms ease-in-out;
+      background: transparent;
+      &::placeholder {
+        text-transform: capitalize;
+        font-family: 'Montserrat';
+      }
+      &:hover,
+      &:focus {
+        border-color: #333;
+      }
+    }
+    & input[type='number'] {
+      -webkit-appearance: none;
+      margin: 0;
+      -moz-appearance: textfield;
+    }
+    & button {
+      margin-top: 5%;
+      padding: 2% 6%;
+      width: auto;
+    }
+  }
+}
+
+#vedway_blog {
+  & .blog_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0;
+    background-color: #79c9a5;
+  }
+  & #header_img {
+    flex: 1 1 50%;
+    text-align: center;
+  }
+  & .content {
+    flex: 1 1 50%;
+    color: #fff;
+    padding-right: 15%;
+    & h1 {
+      font-size: 62px;
+      font-weight: 800;
+      line-height: 70px;
+      text-transform: capitalize;
+    }
+    & h2 {
+      font-weight: 800;
+    }
+    & p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 50px;
+    }
+    & a.btn {
+      margin-top: 20px;
+    }
+  }
+
+  & .blog_.one_ {
+    padding: 4%;
+    & .blog_items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      align-items: center;
+      & .item {
+        padding: 2%;
+        border-radius: 5px;
+        text-align: center;
+        & .img_card {
+          position: relative;
+          & i {
+            font-size: 2rem;
+            position: absolute;
+            bottom: 4%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: transparent;
+            background-clip: text;
+            background-color: #f88b77;
+          }
+        }
+      }
+    }
+  }
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+  padding: 0 !important;
+  clear: both;
+}
+@media (max-width: 960px) {
+  #vedway_contact_us {
+    & .container {
+      flex-direction: column-reverse;
+    }
+    & .tagLine {
+      align-items: flex-start;
+      margin-bottom: 5%;
+      & h1 {
+        line-height: 80px;
+      }
+    }
+    & .content,
+    .tagLine {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  #vedway_contact_us {
+    & .tagLine {
+      margin-bottom: 10%;
+      & h1 {
+        font-size: 70px;
+        line-height: 60px;
+      }
+    }
+    & p {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 560px) {
+  #vedway_contact_us {
+    & .tagLine {
+      & h1 {
+        font-size: 60px;
+        line-height: 50px;
+      }
+    }
+  }
+}
