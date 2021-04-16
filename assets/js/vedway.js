@@ -72,3 +72,72 @@ const single_extras = (value) => {
 
 
 }
+//sale_banner
+const sale_bannerToggle = () => {
+    let sale_banner = document.getElementById('sale_banner_');
+    let sale_card = document.getElementById('sale_card_');
+
+    if (sale_card.classList.contains('card_open')) {
+        sale_card.classList.remove('card_open');
+        sale_banner.classList.remove('card_open');
+        sale_card.classList.add('card_close');
+    } else {
+        sale_card.classList.add('card_open');
+        sale_banner.classList.add('card_open');
+
+    }
+}
+
+//floating_cart
+const floating_cart_toggle = () => {
+    let vedway_floating_cart = document.getElementsByClassName('vedway_floating_cart')[0];
+    let vedway_floating_cart_inner = document.getElementsByClassName('vedway_floating_cart_inner')[0];
+
+    if (vedway_floating_cart.classList.contains('card_open')) {
+        vedway_floating_cart.classList.remove('card_open');
+        vedway_floating_cart.classList.add('card_close');
+        vedway_floating_cart_inner.classList.remove('card_open');
+        vedway_floating_cart_inner.classList.add('card_close');
+    } else {
+        vedway_floating_cart.classList.add('card_open');
+        vedway_floating_cart_inner.classList.add('card_open');
+        vedway_floating_cart.classList.remove('card_close');
+        vedway_floating_cart_inner.classList.remove('card_close');
+    }
+}
+
+
+///blog
+
+const toggleBlogCard = (id) => {
+    var blog_item_one = document.getElementById('blog_item_one');
+    var blog_item_two = document.getElementById('blog_item_two');
+    var blog_item_three = document.getElementById('blog_item_three');
+    var blog_item_four = document.getElementById('blog_item_four');
+    var items = document.getElementsByClassName('blog_item_inner ');
+    var item = document.getElementsByClassName('item');
+
+    for (let index = 0; index < items.length; index++) {
+
+        items[index].classList.remove('active')
+
+        item[index].classList.remove('active');
+    }
+
+    if (id == 1) {
+        blog_item_one.classList.toggle('active');
+        item[0].classList.toggle('active');
+    }
+    if (id == 2) {
+        blog_item_two.classList.toggle('active');
+        item[1].classList.toggle('active');
+    }
+    if (id == 3) {
+        blog_item_three.classList.toggle('active');
+        item[2].classList.toggle('active');
+    }
+    if (id == 4) {
+        blog_item_four.classList.toggle('active');
+        item[3].classList.toggle('active');
+    }
+}

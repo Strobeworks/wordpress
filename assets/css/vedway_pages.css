@@ -47,9 +47,13 @@
 }
 
 #vedway_contact_us .tagLine p {
-  font-size: 3vw;
+  font-size: 1.5rem;
   margin: 0;
   margin-left: 1rem;
+}
+
+#vedway_contact_us h2 {
+  margin: 0;
 }
 
 #vedway_contact_us p {
@@ -130,17 +134,25 @@
 }
 
 #vedway_blog .blog_header {
+  padding: 40px 0;
+  background-color: #79c9a5;
+}
+
+#vedway_blog .blog_header .container {
+  padding: 0px 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 80px 0;
-  background-color: #79c9a5;
+  overflow: hidden;
+  max-width: 1920px;
 }
 
 #vedway_blog #header_img {
@@ -150,12 +162,17 @@
   text-align: center;
 }
 
+#vedway_blog #header_img svg {
+  width: 80%;
+  height: auto;
+}
+
 #vedway_blog .content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
   color: #fff;
-  padding-right: 15%;
+  padding: 0 15% 0 5%;
 }
 
 #vedway_blog .content h1 {
@@ -167,6 +184,7 @@
 
 #vedway_blog .content h2 {
   font-weight: 800;
+  margin-bottom: 3rem;
 }
 
 #vedway_blog .content p {
@@ -180,15 +198,47 @@
   margin-top: 20px;
 }
 
+#vedway_blog #blog_item_one,
+#vedway_blog #blog_item_two,
+#vedway_blog #blog_item_three,
+#vedway_blog #blog_item_four {
+  display: none;
+  opacity: 0;
+}
+
+#vedway_blog #blog_item_one.active,
+#vedway_blog #blog_item_two.active,
+#vedway_blog #blog_item_three.active,
+#vedway_blog #blog_item_four.active {
+  display: block;
+  -webkit-animation: blog_open 1s ease-in-out forwards;
+          animation: blog_open 1s ease-in-out forwards;
+}
+
+@-webkit-keyframes blog_open {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blog_open {
+  100% {
+    opacity: 1;
+  }
+}
+
 #vedway_blog .blog_.one_ {
+  position: relative;
   padding: 4%;
+  background-color: #fff;
+  z-index: 1;
 }
 
 #vedway_blog .blog_.one_ .blog_items {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -196,25 +246,319 @@
 }
 
 #vedway_blog .blog_.one_ .blog_items .item {
+  cursor: pointer;
   padding: 2%;
+  margin: 5% 0;
   border-radius: 5px;
   text-align: center;
+  -webkit-transition: -webkit-box-shadow 500ms ease-in-out, -webkit-transform 100ms ease-in-out;
+  transition: -webkit-box-shadow 500ms ease-in-out, -webkit-transform 100ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out, transform 100ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out, transform 100ms ease-in-out, -webkit-box-shadow 500ms ease-in-out, -webkit-transform 100ms ease-in-out;
+}
+
+#vedway_blog .blog_.one_ .blog_items .item:hover {
+  -webkit-box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+}
+
+#vedway_blog .blog_.one_ .blog_items .item:hover .img_card i {
+  color: #fff;
+}
+
+#vedway_blog .blog_.one_ .blog_items .item.active {
+  -webkit-box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+}
+
+#vedway_blog .blog_.one_ .blog_items .item.active .img_card i {
+  color: #fff;
+}
+
+#vedway_blog .blog_.one_ .blog_items .item .card {
+  height: 450px;
+  border-radius: 10px;
 }
 
 #vedway_blog .blog_.one_ .blog_items .item .img_card {
   position: relative;
 }
 
+#vedway_blog .blog_.one_ .blog_items .item .img_card img {
+  border-radius: 10px;
+}
+
 #vedway_blog .blog_.one_ .blog_items .item .img_card i {
   font-size: 2rem;
   position: absolute;
-  bottom: 4%;
+  bottom: 8%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  color: transparent;
-  background-clip: text;
-  background-color: #f88b77;
+  color: #f88b77;
+  -webkit-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
+}
+
+#vedway_blog .blog_.two_ {
+  overflow: hidden;
+  background-color: #fbf2e7;
+  position: relative;
+}
+
+#vedway_blog .blog_.two_::before {
+  content: '';
+  background: -webkit-gradient(linear, left top, left bottom, from(#c79854), to(transparent));
+  background: linear-gradient(#c79854, transparent);
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 0;
+}
+
+#vedway_blog .blog_.two_ .container {
+  position: relative;
+  padding: 0 5%;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner {
+  position: relative;
+  color: #333;
+  padding: 5% 0;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 80px 0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one span {
+  color: #af5c2c;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one h3 {
+  font-size: 44px;
+  margin-top: 0;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one p {
+  margin-bottom: 14%;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .img.block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-right: 4%;
+  border-right: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .img.block img {
+  border-radius: 10px;
+  width: 90%;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  padding: 0% 5% 0% 4%;
+  color: #333;
+  max-height: 1000px;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h3 {
+  font-size: 32px;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h4 {
+  font-size: 21px;
+  font-weight: 200;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h4 strong {
+  font-weight: 800;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients .life {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients .life h4 {
+  margin: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients .life p {
+  padding: 0 2%;
+  line-height: normal;
+  margin: 0;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 {
+  text-align: center;
+  font-size: 58px;
+  font-weight: 800;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 span {
+  color: #af5c2c;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 2%;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .img {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 6;
+  grid-column: 4/10;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .img img {
+  max-height: 590px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list .list_item {
+  margin: 30% 0;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list h3 {
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list p {
+  font-size: 18px;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list.one {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+
+#vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list.two {
+  -ms-grid-column: 10;
+  -ms-grid-column-span: 3;
+  grid-column: 10/13;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four h2 {
+  text-align: left;
+  font-size: 58px;
+  font-weight: 800;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four h2 span {
+  color: #af5c2c;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_card {
+  cursor: pointer;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2% 2%;
+  margin: 4% auto 0 auto;
+  -webkit-transition: -webkit-box-shadow 500ms ease-in-out;
+  transition: -webkit-box-shadow 500ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out, -webkit-box-shadow 500ms ease-in-out;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_card:hover {
+  -webkit-box-shadow: 2px 5px 25px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 5px 25px 15px rgba(0, 0, 0, 0.1);
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 70%;
+          flex: 1 1 70%;
+  padding-right: 2%;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text h3 {
+  color: #af5c2c;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
+  margin-bottom: 5%;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text p {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom: 2%;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text a {
+  color: #af5c2c;
+  opacity: 0.8;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text a:hover {
+  opacity: 1;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text small {
+  font-size: 26px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+#vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_img img {
+  border-radius: 10px;
 }
 
 div.wpforms-container-full .wpforms-form .wpforms-field {
@@ -222,7 +566,125 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
   clear: both;
 }
 
+@media (max-width: 1600px) {
+  #vedway_blog .content {
+    padding: 0 5% 0 5%;
+  }
+  #vedway_blog .blog_.one_ .blog_items .item .card {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #vedway_blog .content {
+    padding: 0 2% 0 2%;
+  }
+  #vedway_blog .content h1 {
+    font-size: 52px;
+    line-height: 60px;
+  }
+  #vedway_blog .content p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 50px;
+  }
+  #vedway_blog .blog_.one_ .blog_items .item .card {
+    height: 320px;
+  }
+  #vedway_blog .blog_.one_ .blog_items .item .card h2 {
+    font-size: 20px;
+    font-weight: 100;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one h3 {
+    font-size: 38px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h3 {
+    font-size: 28px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h4 {
+    font-size: 20px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 {
+    font-size: 48px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list h3 {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 960px) {
+  #vedway_blog .blog_.one_ .blog_items .item .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 240px;
+    width: 180px;
+  }
+  #vedway_blog .blog_.one_ .blog_items .item .card h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  #vedway_blog .blog_.one_ .blog_items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #vedway_blog .blog_.one_ .container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  #vedway_blog .content {
+    padding: 0 2% 0 2%;
+  }
+  #vedway_blog .content h1 {
+    font-size: 52px;
+    line-height: 60px;
+  }
+  #vedway_blog .content p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 50px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner #blog_item_four .blog_cards .blog_card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .img.block,
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one h3 {
+    font-size: 38px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h3 {
+    font-size: 28px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h4 {
+    font-size: 20px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 {
+    font-size: 48px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list h3 {
+    font-size: 28px;
+  }
   #vedway_contact_us .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -247,6 +709,123 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
 }
 
 @media (max-width: 760px) {
+  #vedway_blog .blog_.one_ .blog_items {
+    margin: 8% 0;
+  }
+  #vedway_blog .blog_.one_ .blog_items .item .card {
+    height: 220px;
+    width: 180px;
+  }
+  #vedway_blog .blog_header .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #vedway_blog .blog_.two_ #blog_item_four h2 {
+    text-align: left;
+    font-size: 38px;
+    font-weight: 600;
+  }
+  #vedway_blog .content {
+    padding: 0 2% 0 2%;
+  }
+  #vedway_blog .content h1 {
+    font-size: 42px;
+    line-height: 60px;
+  }
+  #vedway_blog .content p {
+    font-size: 16px;
+    line-height: unset;
+    margin-bottom: 50px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner #blog_item_four .blog_cards .blog_card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .img.block,
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    border: none;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .img.block {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding: 0 4%;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one h3 {
+    font-size: 38px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h3 {
+    font-size: 28px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h4 {
+    font-size: 20px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 {
+    font-size: 38px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block {
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    margin-top: 10%;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list .list_item {
+    margin: 10% 0;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list.one {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1 / 7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    padding-right: 2%;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list.two {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 6;
+    grid-column: 7 / 13;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    padding-left: 2%;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list.img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list h3 {
+    font-size: 20px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list p {
+    font-size: 16px;
+    line-height: normal;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .img {
+    text-align: center;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .img img {
+    width: 90%;
+    margin: 0 auto;
+  }
   #vedway_contact_us .tagLine {
     margin-bottom: 10%;
   }
@@ -260,9 +839,133 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
 }
 
 @media (max-width: 560px) {
+  #vedway_blog .blog_.one_ .blog_items .item .card {
+    margin: 8% 0;
+    width: 160px;
+  }
+  #vedway_blog .blog_.two_ #blog_item_four h2 {
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    margin: 10% 0;
+  }
+  #vedway_blog .content {
+    padding: 0 2% 0 2%;
+  }
+  #vedway_blog .content h1 {
+    font-size: 42px;
+    line-height: 60px;
+  }
+  #vedway_blog .content p {
+    font-size: 16px;
+    line-height: unset;
+    margin-bottom: 50px;
+  }
+  #vedway_blog .blog_.one_ .blog_items {
+    margin: 8% 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner #blog_item_four .blog_cards .blog_card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .img.block,
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    border: none;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one h3 {
+    font-size: 38px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h3 {
+    font-size: 28px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one .content.block .ingredients h4 {
+    font-size: 20px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 {
+    font-size: 38px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list h3 {
+    font-size: 20px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .list p {
+    font-size: 16px;
+    line-height: normal;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .img {
+    text-align: center;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two .block .img img {
+    width: 90%;
+    margin: 0 auto;
+  }
   #vedway_contact_us .tagLine h1 {
     font-size: 60px;
     line-height: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .blog_.one_ .blog_items .item .card {
+    width: 100px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_one h3 {
+    font-size: 34px;
+  }
+  #vedway_blog
+.blog_.two_
+.blog_item_inner
+.blocks_one
+.content.block
+.ingredients
+h3 {
+    font-size: 22px;
+  }
+  #vedway_blog .blog_.two_ .blog_item_inner .blocks_two h2 {
+    font-size: 32px;
+  }
+  #vedway_blog
+.blog_.two_
+.blog_item_inner
+.blocks_one
+.content.block
+.ingredients
+h4 {
+    margin: 5% 0;
+  }
+  #vedway_blog .blog_.two_ {
+    padding-bottom: 5%;
+  }
+  #vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text h3 {
+    font-size: 22px;
+    line-height: unset;
+  }
+  #vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text p {
+    font-size: 16px;
+    line-height: unset;
+  }
+  #vedway_blog .blog_.two_ #blog_item_four .blog_cards .blog_text small {
+    font-size: 16px;
+    line-height: unset;
+  }
+  #vedway_blog .blog_.one_ .blog_items .item h2 {
+    font-size: 16px;
+  }
+  #vedway_blog .blog_header .container {
+    padding: 0px 5%;
   }
 }
 /*# sourceMappingURL=vedway_pages.css.map */

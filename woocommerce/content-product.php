@@ -71,7 +71,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
           </div>
           <div class="blockTwo">
-
             <?php woocommerce_template_single_add_to_cart();?>
           </div>
         </div>

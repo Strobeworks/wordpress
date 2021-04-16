@@ -277,6 +277,13 @@
 
       <li>
         <div class="icon">
+          <img style="width: 70%;margin-top: 5%;" src=<?php echo vedway_dir_imgs()."made-with-love/cow.svg" ?> alt="100% veg icon" srcset="" />
+        </div>
+        <p>Gir Cow <br> Ghee</p>
+      </li>
+
+      <li>
+        <div class="icon">
           <img src=<?php echo vedway_dir_imgs()."made-with-love/sideeffect.svg" ?> alt="100% veg icon" srcset="" />
         </div>
         <p>No Side <br> Effects</p>

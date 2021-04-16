@@ -2,8 +2,9 @@
     <div class="container">
         <div class="content">
             <div class="_inner">
-                <p><strong>Vedway</strong></p>
-                <p><strong>Manufactured At:</strong> <br>
+                <strong> <h2>Vedway <br>
+                Manufactured At: </h2></strong> <br>
+                <p>
                     <a id="link_address" href="https://goo.gl/maps/6vua3msvfcNq1JwA9" target="_blank" rel="noopener noreferrer">
                     Amby Food Pvt. Ltd.<br>
                         B 161, Malegaon MIDC Sinnar<br>
